@@ -1,5 +1,5 @@
 This directory contains a demo application for
-[ng_modular_admin]https://github.com/HyperionGray/ng_modular_admin().
+[ng_modular_admin](https://github.com/HyperionGray/ng_modular_admin).
 
 View [the demo](https://hyperiongray.github.io/ng_modular_admin_demo/) on GitHub
 Pages.
