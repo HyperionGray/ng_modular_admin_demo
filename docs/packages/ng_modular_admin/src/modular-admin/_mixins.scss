@@ -1,0 +1,69 @@
+/*
+ * Button mixins.
+ *
+ * This is adapted from Bootstrap to work with CSS custom properties. Namely, we
+ * need to avoid lighten() and darken().
+ */
+@mixin ma-button-variant($paletteName, $textColor) {
+  color: $textColor;
+  background-color: var(--ma-#{$paletteName}-color);
+  border-color: transparent;
+  transition: opacity var(--ma-slow-animation) ease-out;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: var(--ma-#{$paletteName}-color-dark);
+  }
+
+  &:active:not(:disabled) {
+    background-color: var(--ma-#{$paletteName}-color-darker);
+  }
+
+  &.outline {
+    color: var(--ma-#{$paletteName}-color-dark);
+    border: 1px solid var(--ma-#{$paletteName}-color-dark);
+    border-color: var(--ma-#{$paletteName}-color-dark);
+    background-color: transparent;
+
+    &:hover:not(:disabled) {
+      color: $textColor;
+      border-color: var(--ma-#{$paletteName}-color);
+      background-color: var(--ma-#{$paletteName}-color);
+    }
+
+    &:active:not(:disabled) {
+      color: $textColor;
+      border-color: var(--ma-#{$paletteName}-color-darker);
+      background-color: var(--ma-#{$paletteName}-color-darker);
+    }
+  }
+}
+
+/*
+ * Color mixin.
+ *
+ * Create palette of lighter/darker colors from a base color.
+ */
+@mixin ma-color-palette($paletteName, $baseColor) {
+  --ma-#{$paletteName}-color-lighter: lighten($baseColor, 16%);
+  --ma-#{$paletteName}-color-light: lighten($baseColor, 10%);
+  --ma-#{$paletteName}-color: $baseColor;
+  --ma-#{$paletteName}-color-dark: darken($baseColor, 10%);
+  --ma-#{$paletteName}-color-darker: darken($baseColor, 16%);
+}
+
+/**
+ * Column mixin.
+ */
+@mixin ma-columns($columnCount, $breakPoint) {
+  @include media-breakpoint-up($breakPoint) {
+    .columns-#{$breakPoint}-#{$columnCount} {
+      column-count: $columnCount;
+      column-gap: var(--ma-gutter-width);
+    }
+  }
+}
