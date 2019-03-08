@@ -1,10 +1,6 @@
 <ma-card>
   <h2>About ng_modular_admin</h2>
   <p class='lead'>A port of Modular Admin to Angular Dart</p>
-  <p class='text-danger'>
-    ng_modular_admin is still alpha quality. Don't use it on your production
-    project!
-  </p>
   <p>
     This project is a port of
     <a href='http://modularcode.io/single-project.html'>Modular Admin HTML</a>
@@ -21,12 +17,8 @@
   </p>
   <p>
     <ma-button href='https://github.com/hyperiongray/ng_modular_admin'>
-      <fa name='github'></fa>
+      <fa group='brand' name='github'></fa>
       View On GitHub
-    </ma-button>
-    <ma-button href='https://github.com/HyperionGray/ng_modular_admin/archive/master.zip'>
-      <fa name='cloud-download'></fa>
-      Download ZIP
     </ma-button>
   </p>
 </ma-card>
@@ -58,19 +50,22 @@
 <ma-card>
   <h2>Getting Started</h2>
   <p>
-    To use <code>ng_modular_admin</code> in your own Angular Dart project, you
-    need to do two things:
+    To use <code>ng_modular_admin</code> in your own Angular Dart project, do
+    the following:
   </p>
   <ol>
-    <li>Add Modular Admin as a dependency in <code>pubspec.yaml</code>.</li>
-    <li>Add the stylesheet to your <code>index.html</code>: </li>
+    <li>Add ng_modular_admin as a dependency in <code>pubspec.yaml</code>.</li>
+    <li>Add the stylesheet to your <code>index.html</code> (see below)</li>
+    <li>Import the <code>package:ng_modular_admin/ng_modular_admin.dart</code> package and
+        add <code>modularAdminDirectives</code>code to your components' directives.</li>
+    <li>Look at the <a [routerLink]='Routes.layout.toUrl()'>Layout</a> page for information on setting up
+        the application shell.</li>
   </ol>
   <p>
     The stylesheet element should look like this:
   </p>
-  <pre class='code'>&#x3C;link rel=&#x27;stylesheet&#x27;
-      type=&#x27;text/css&#x27;
-      href=&#x27;packages/ng_modular_admin/css/modular-admin.css&#x27;&#x3E;</pre>
+  <pre class='code'>{{"<link rel='stylesheet' type='text/css'
+      href='packages/ng_modular_admin/css/modular-admin.css'>"}}</pre>
   <p>
     If you're not familiar with Dart, read the
     <a href="https://www.dartlang.org/guides/language">Language Overview</a>.
@@ -85,6 +80,6 @@
   </p>
   <ul>
     <li><a href='https://github.com/hyperiongray/ng_modular_admin'>Modular Admin Source Code</a></li>
-    <li><a href='https://pub.dartlang.org/packages/ng_fontawesome'>Pub Package</a></li>
+    <li><a href='https://pub.dartlang.org/packages/ng_modular_admin'>Pub Package</a></li>
   </ul>
 </ma-card>

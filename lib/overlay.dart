@@ -15,7 +15,7 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
         }
     '''],
     templateUrl: 'overlay.html',
-    directives: const [CORE_DIRECTIVES, formDirectives, MA_DIRECTIVES]
+    directives: const [coreDirectives, formDirectives, modularAdminDirectives]
 )
 class OverlayComponent {
     bool overlayIsVisible = false;

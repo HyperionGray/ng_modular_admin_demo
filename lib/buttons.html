@@ -67,7 +67,7 @@
     <p>
       <ma-button type='primary'
                  href='https://google.com'>
-        <fa name='google'></fa>
+        <fa group='brand' name='google'></fa>
         Google
       </ma-button>
     </p>
@@ -291,5 +291,34 @@
 &lt;ma-button [busy]=&apos;{{busyDemo}}&apos;&gt;
   Disable Demo
 &lt;/ma-button&gt;</pre>
+  </ma-card>
+  <ma-card>
+    <h2>Icons</h2>
+    <p class='lead'>Enhance buttons with inline icons.</p>
+    <p>
+      An icon on the left side of the text has a right margin applied so that
+      it doesn't touch the text.
+    </p>
+    <p>
+      <ma-button size='large' (click)='showClickAlert($event)'>
+        <fa name='cat'></fa> Cat
+      </ma-button>
+    </p>
+    <pre class='code'>{{"<ma-button size='large'>
+  <fa name='cat'></fa> Cat
+</ma-button>"}}</pre>
+    <p>
+      An icon on the right side of the text has a left margin applied <em>if it
+      follows a span element</em> (this restriction is necessary because CSS
+      selectors do not apply to text nodes).
+    </p>
+    <p>
+      <ma-button size='large' (click)='showClickAlert($event)'>
+        <span>Dog</span><fa name='dog'></fa>
+      </ma-button>
+    </p>
+    <pre class='code'>{{"<ma-button size='large'>
+  <span>Dog</span><fa name='dog'></fa>
+</ma-button>"}}</pre>
   </ma-card>
 </div>

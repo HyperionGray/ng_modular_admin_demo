@@ -2,90 +2,92 @@
   <ma-toast-outlet [service]='toastService'></ma-toast-outlet>
   <ma-top-nav *ngIf='layoutService.hasTopNav' [fixed]='layoutService.topNavIsFixed'>
     <ma-breadcrumbs class='float-xs-left'></ma-breadcrumbs>
-    <div class='float-xs-right buttons'>
-      <fa name='search' size='lg'></fa>
-      <input type='search' placeholder='Search' [(ngModel)]='searchTerm'>
+    <div class='float-xs-right buttons' style='position: relative; top: -0.5em;'>
+      <form (ngSubmit)='handleSubmit()'>
+        <fa name='search' size='lg'></fa>
+        <input type='search' placeholder='Search' [(ngModel)]='searchTerm'>
+      </form>
     </div>
   </ma-top-nav>
   <ma-side-nav *ngIf='layoutService.hasSideNav' [fixed]='layoutService.sideNavIsFixed'>
     <ma-side-nav-header>
       <ma-logo></ma-logo> Modular Admin
     </ma-side-nav-header>
-    <ma-side-nav-item [route]='["About"]'>
-      <fa name='info-circle' [fw]='true' size='lg'></fa> About
+    <ma-side-nav-item [route]='Routes.about'>
+      <fa class='foo' name='info-circle' [fw]='true' size='lg'></fa> About
       <ma-tag type='primary' [pill]='true' class='float-xs-right'>{{tagsService.aboutBadge}}</ma-tag>
     </ma-side-nav-item>
-    <ma-side-nav-item [route]='["Layout"]'>
+    <ma-side-nav-item [route]='Routes.layout'>
       <fa name='th' [fw]='true' size='lg'></fa> Layout
       <ma-tag type='info' [pill]='true' class='float-xs-right'>{{tagsService.layoutBadge}}</ma-tag>
     </ma-side-nav-item>
-    <ma-side-nav-item [route]='["Themes"]'>
+    <ma-side-nav-item [route]='Routes.themes'>
       <fa name='paint-brush' [fw]='true' size='lg'></fa> Themes
       <ma-tag type='danger' [pill]='true' class='float-xs-right'>{{tagsService.themesBadge}}</ma-tag>
     </ma-side-nav-item>
-    <ma-side-nav-item [route]='["Typography"]'>
+    <ma-side-nav-item [route]='Routes.typography'>
       <fa name='font' [fw]='true' size='lg'></fa> Typography
     </ma-side-nav-item>
     <ma-side-nav-menu>
       <ma-side-nav-menu-header>
         <fa name='map-signs' [fw]='true' size='lg'></fa> Navigation
       </ma-side-nav-menu-header>
-      <ma-side-nav-item [route]='["Footer"]'>
-        Footer
+      <ma-side-nav-item [route]='Routes.topNav'>
+        Top Navigation
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='["SideNav"]'>
+      <ma-side-nav-item [route]='Routes.sideNav'>
         Side Navigation
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='["TopNav"]'>
-        Top Navigation
+      <ma-side-nav-item [route]='Routes.footer'>
+        Footer
       </ma-side-nav-item>
     </ma-side-nav-menu>
     <ma-side-nav-menu>
       <ma-side-nav-menu-header>
-        <fa name='gears' [fw]='true' size='lg'></fa> Components
+        <fa name='toolbox' [fw]='true' size='lg'></fa> Components
       </ma-side-nav-menu-header>
-      <ma-side-nav-item [route]='["Buttons"]'>
+      <ma-side-nav-item [route]='Routes.buttons'>
         Buttons
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='["Cards"]'>
+      <ma-side-nav-item [route]='Routes.cards'>
         Cards
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='["Forms"]'>
+      <ma-side-nav-item [route]='Routes.forms'>
         Forms
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='["ListGroup"]'>
+      <ma-side-nav-item [route]='Routes.listGroup'>
         List Group
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='["Overlay"]'>
+      <ma-side-nav-item [route]='Routes.overlay'>
         Overlay
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='["Pagers"]'>
+      <ma-side-nav-item [route]='Routes.pagers'>
         Pagers
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='["Tables"]'>
+      <ma-side-nav-item [route]='Routes.tables'>
         Tables
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='["Tags"]'>
+      <ma-side-nav-item [route]='Routes.tags'>
         Tags
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='["Toast"]'>
+      <ma-side-nav-item [route]='Routes.toast'>
         Toast
       </ma-side-nav-item>
     </ma-side-nav-menu>
     <ma-side-nav-menu>
       <ma-side-nav-menu-header>
-        <fa name='file-text-o' [fw]='true' size='lg'></fa> Pages
+        <fa name='file-code' [fw]='true' size='lg'></fa> Pages
       </ma-side-nav-menu-header>
-      <ma-side-nav-item [route]='["Login"]'>
+      <ma-side-nav-item [route]='Routes.login'>
         Log In
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='["SignUp"]'>
+      <ma-side-nav-item [route]='Routes.signUp'>
         Sign Up
       </ma-side-nav-item>
     </ma-side-nav-menu>
   </ma-side-nav>
   <ma-content>
-    <router-outlet></router-outlet>
+    <router-outlet [routes]='Routes.all'></router-outlet>
   </ma-content>
   <ma-footer *ngIf='layoutService.hasFooter' [fixed]='layoutService.footerIsFixed'>
     <div class='float-xs-left'>

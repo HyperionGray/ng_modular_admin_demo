@@ -6,10 +6,13 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
 @Component(
     selector: 'tags',
     styles: const ['''
-        ul {list-style: none;}
+        .button-label {
+            font-weight: 700;
+            width: 7rem;
+        }
     '''],
     templateUrl: 'tags.html',
-    directives: const [MA_DIRECTIVES, FaIcon]
+    directives: const [modularAdminDirectives, FaIcon]
 )
 class TagsComponent {
     TagsService tagsService;

@@ -38,7 +38,7 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
         }
     '''],
     templateUrl: 'themes.html',
-    directives: const [CORE_DIRECTIVES, formDirectives, MA_DIRECTIVES]
+    directives: const [coreDirectives, formDirectives, modularAdminDirectives]
 )
 class ThemesComponent implements AfterContentInit {
     String cardPadding = '';
@@ -46,7 +46,7 @@ class ThemesComponent implements AfterContentInit {
     String gutterWidth = '';
     ElementRef host;
     Timer updateTimer;
-    List<String> themes = ['blue', 'red', 'orange', 'purple', 'seagreen'];
+    List<String> themes = ['blue', 'red', 'orange', 'hyperion', 'seagreen'];
 
     DocumentService _doc;
 

@@ -13,7 +13,7 @@ import 'layout.dart';
         .tall {height: 50em;}
     '''],
     templateUrl: 'footer.html',
-    directives: const [CORE_DIRECTIVES, formDirectives, MA_DIRECTIVES]
+    directives: const [coreDirectives, formDirectives, modularAdminDirectives]
 )
 class FooterComponent {
     /// A service that contains layout state.

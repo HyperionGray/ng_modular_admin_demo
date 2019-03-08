@@ -5,28 +5,28 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
 
 import 'layout.dart';
 
-/// Top navigation component.
+/// Side navigation component.
 @Component(
-    selector: 'top-nav',
+    selector: 'side-nav',
     styles: const ['''
         ul {list-style: none;}
         .tall {height: 50em;}
     '''],
-    templateUrl: 'top-nav.html',
-    directives: const [formDirectives, MA_DIRECTIVES]
+    templateUrl: 'side_nav.html',
+    directives: const [coreDirectives, formDirectives, modularAdminDirectives]
 )
-class TopNavComponent {
-    /// A service that contains application state.
+class SideNavComponent {
+    /// A service that contains layout state.
     LayoutService layoutService;
 
     DocumentService _doc;
 
     /// Constructor.
-    TopNavComponent(this._doc, this.layoutService) {
-        this._doc.title = 'Top Navigation';
+    SideNavComponent(this._doc, this.layoutService) {
+        this._doc.title = 'Side Navigation';
         this._doc.breadcrumbs = [
             new Breadcrumb(name: 'Navigation', icon: 'map-signs'),
-            new Breadcrumb(name: 'Top Navigation'),
+            new Breadcrumb(name: 'Side Navigation'),
         ];
     }
 }

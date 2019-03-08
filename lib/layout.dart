@@ -3,11 +3,14 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:ng_modular_admin/ng_modular_admin.dart';
 
+import 'routes.dart';
+
 /// Layout component.
 @Component(
     selector: 'layout',
     templateUrl: 'layout.html',
-    directives: const [formDirectives, MA_DIRECTIVES, RouterLink]
+    directives: const [formDirectives, modularAdminDirectives, RouterLink],
+    exports: [Routes]
 )
 class LayoutComponent {
     DocumentService documentService;

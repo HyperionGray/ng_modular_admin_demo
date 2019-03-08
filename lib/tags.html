@@ -48,41 +48,39 @@
         happened in a different view, e.g. by badging a nav item. Try adding tags
         to some of the items in the side navigation.
       </p>
-      <ul>
-        <li>
-          <strong>About Tag</strong>
-          <ma-button size='small' type='primary'
-                     (click)='tagsService.incrementAboutBadge()'>
-            <fa name='arrow-up'></fa> Up
-          </ma-button>
-          <ma-button size='small' type='primary'
-                     (click)='tagsService.decrementAboutBadge()'>
-            Down <fa name='arrow-down'></fa>
-          </ma-button>
-        </li>
-        <li>
-          <strong>Layout Tag</strong>
-          <ma-button size='small' type='info'
-                     (click)='tagsService.incrementLayoutBadge()'>
-            <fa name='arrow-up'></fa> Up
-          </ma-button>
-          <ma-button size='small' type='info'
-                     (click)='tagsService.decrementLayoutBadge()'>
-            Down <fa name='arrow-down'></fa>
-          </ma-button>
-        </li>
-        <li>
-          <strong>Themes Tag</strong>
-          <ma-button size='small' type='danger'
-                     (click)='tagsService.incrementThemesBadge()'>
-            <fa name='arrow-up'></fa> Up
-          </ma-button>
-          <ma-button size='small' type='danger'
-                     (click)='tagsService.decrementThemesBadge()'>
-            Down <fa name='arrow-down'></fa>
-          </ma-button>
-        </li>
-      </ul>
+      <p>
+        <label class='button-label'>About Tag</label>
+        <ma-button size='small' type='primary'
+                   (click)='tagsService.incrementAboutBadge()'>
+          <fa name='arrow-up'></fa> Up
+        </ma-button>
+        <ma-button size='small' type='primary'
+                   (click)='tagsService.decrementAboutBadge()'>
+          Down <fa name='arrow-down'></fa>
+        </ma-button>
+      </p>
+      <p class='tagButtons'>
+        <label class='button-label'>Layout Tag</label>
+        <ma-button size='small' type='info'
+                   (click)='tagsService.incrementLayoutBadge()'>
+          <fa name='arrow-up'></fa> Up
+        </ma-button>
+        <ma-button size='small' type='info'
+                   (click)='tagsService.decrementLayoutBadge()'>
+          Down <fa name='arrow-down'></fa>
+        </ma-button>
+      </p>
+      <p class='tagButtons'>
+        <label class='button-label'>Themes Tag</label>
+        <ma-button size='small' type='danger'
+                   (click)='tagsService.incrementThemesBadge()'>
+          <fa name='arrow-up'></fa> Up
+        </ma-button>
+        <ma-button size='small' type='danger'
+                   (click)='tagsService.decrementThemesBadge()'>
+          Down <fa name='arrow-down'></fa>
+        </ma-button>
+      </p>
       <p>
         The following source demonstrates a badged side navigation item.
       </p>

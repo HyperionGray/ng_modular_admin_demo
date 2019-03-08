@@ -5,7 +5,7 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
 @Component(
     selector: 'tables',
     templateUrl: 'tables.html',
-    directives: const [MA_DIRECTIVES]
+    directives: const [modularAdminDirectives]
 )
 class TablesComponent {
     DocumentService _doc;

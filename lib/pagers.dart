@@ -6,7 +6,7 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
 @Component(
     selector: 'pagers',
     templateUrl: 'pagers.html',
-    directives: const [CORE_DIRECTIVES, MA_DIRECTIVES]
+    directives: const [coreDirectives, modularAdminDirectives]
 )
 class PagersComponent {
     int currentPage = 1;

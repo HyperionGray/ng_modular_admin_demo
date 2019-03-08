@@ -6,7 +6,7 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
 @Component(
     selector: 'typography',
     templateUrl: 'typography.html',
-    directives: const [MA_DIRECTIVES, FaIcon]
+    directives: const [modularAdminDirectives, FaIcon]
 )
 class TypographyComponent {
     DocumentService _doc;

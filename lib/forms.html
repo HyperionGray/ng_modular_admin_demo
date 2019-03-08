@@ -90,20 +90,6 @@
   &#x3C;label&#x3E;Textarea&#x3C;/label&#x3E;
   &#x3C;textarea&#x3E;Content text&#x3C;/textarea&#x3E;
 &#x3C;/ma-input-group&#x3E;</pre>
-      <p>
-        Use the attribute <code>[in-text]='true'</code> to make an input group
-        <ma-input-group [in-text]='true'>
-          <input type='text' value='flow inline'
-                 style='width: 6em'>
-        </ma-input-group>
-        with text.
-      </p>
-      <pre class='code'>…to make an input group
-&lt;ma-input-group [in-text]=&apos;true&apos;&gt;
-  &lt;input type=&apos;text&apos; value=&apos;flow inline&apos;
-         style=&apos;width: 6em&apos;&gt;
-&lt;/ma-input-group&gt;
-with text.</pre>
     </ma-card>
   </div>
   <div class='col-lg'>
@@ -212,6 +198,10 @@ with text.</pre>
   &#x3C;/label&#x3E;
 &#x3C;/ma-input-group&#x3E;</pre>
     </ma-card>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-lg'>
     <ma-card>
       <h2>Selects</h2>
       <p class='lead'>
@@ -424,7 +414,7 @@ import &#x27;package:ng_modular_admin/validators.dart&#x27; as MaValidators;
             max-width: 30em;
         }
     &#x27;&#x27;&#x27;],
-    directives: const [CORE_DIRECTIVES, FaIcon, formDirectives, MA_DIRECTIVES]
+    directives: const [coreDirectives, FaIcon, formDirectives, modularAdminDirectives]
 )
 class FormsComponent {
     ControlGroup demoForm;

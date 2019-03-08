@@ -1,9 +1,10 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
-
 import 'package:ng_modular_admin/ng_modular_admin.dart';
 import 'package:ng_modular_admin/validators.dart' as MaValidators;
+
+import 'routes.dart';
 
 /// Layout component.
 @Component(
@@ -24,8 +25,10 @@ import 'package:ng_modular_admin/validators.dart' as MaValidators;
             text-align: right;
         }
     '''],
-    templateUrl: 'sign-up.html',
-    directives: const [formDirectives, MA_DIRECTIVES, ROUTER_DIRECTIVES]
+    templateUrl: 'sign_up.html',
+    directives: const [formDirectives, modularAdminDirectives,
+        routerDirectives],
+    exports: [Routes]
 )
 class SignUpComponent {
     /// Router instance.
@@ -39,8 +42,7 @@ class SignUpComponent {
     /// Constructor.
     SignUpComponent(this._doc, this.router) {
         this._doc.title = 'Sign Up';
-        final builder = new FormBuilder();
-        this.signupForm = builder.group({
+        this.signupForm = FormBuilder.controlGroup({
             'username': ['', MaValidators.required()],
             'password1': ['', MaValidators.required()],
             'password2': ['', null],
@@ -56,6 +58,6 @@ class SignUpComponent {
 
     /// Handle form submission
     void register() {
-        router.navigate(['About']);
+        router.navigate(Routes.about.toUrl());
     }
 }

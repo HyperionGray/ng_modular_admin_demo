@@ -11,7 +11,8 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
 @Component(
     selector: 'buttons',
     templateUrl: 'buttons.html',
-    directives: const [CORE_DIRECTIVES, FaIcon, formDirectives, MA_DIRECTIVES]
+    directives: const [coreDirectives, FaIcon, formDirectives,
+        modularAdminDirectives]
 )
 class ButtonsComponent {
     bool disabledDemo = false;

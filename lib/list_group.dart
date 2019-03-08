@@ -5,7 +5,7 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
 @Component(
     selector: 'list-group',
     templateUrl: 'list_group.html',
-    directives: const [MA_DIRECTIVES]
+    directives: const [modularAdminDirectives]
 )
 class ListGroupComponent {
     DocumentService _doc;

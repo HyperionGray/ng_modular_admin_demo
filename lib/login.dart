@@ -3,31 +3,41 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
-
 import 'package:ng_modular_admin/ng_modular_admin.dart';
 import 'package:ng_modular_admin/validators.dart' as MaValidators;
+
+import 'routes.dart';
 
 /// Layout component.
 @Component(
     selector: 'login',
     styles: const ['''
         ma-card.shake {
-            animation: shake .5s linear;
+            animation: shake 0.5s linear;
         }
         @keyframes shake {
-            8%, 41% {
-                transform: translateX(-10px);
+            from {
+                transform: translateX(0);
             }
-            25%, 58% {
-                transform: translateX(10px);
+            10% {
+                transform: translateX(-1rem);
             }
-            75% {
-                transform: translateX(-5px);
+            20% {
+                transform: translateX(1rem);
             }
-            92% {
-                transform: translateX(5px);
+            35% {
+                transform: translateX(-0.5rem);
             }
-            0%, 100% {
+            50% {
+                transform: translateX(0.5rem);
+            }
+            70% {
+                transform: translateX(-0.25rem);
+            }
+            90% {
+                transform: translateX(0.25rem);
+            }
+            to {
                 transform: translateX(0);
             }
         }
@@ -41,11 +51,11 @@ import 'package:ng_modular_admin/validators.dart' as MaValidators;
         .content {
             padding: 20px;
         }
-        .input-label {
-        }
     '''],
     templateUrl: 'login.html',
-    directives: const [formDirectives, MA_DIRECTIVES, ROUTER_DIRECTIVES]
+    directives: const [formDirectives, modularAdminDirectives,
+        routerDirectives],
+    exports: [Routes]
 )
 class LoginComponent {
     /// Router location.
@@ -61,8 +71,7 @@ class LoginComponent {
     /// Constructor.
     LoginComponent(this._doc, this.router) {
         this._doc.title = 'Login';
-        final builder = new FormBuilder();
-        this.loginForm = builder.group({
+        this.loginForm = FormBuilder.controlGroup({
             'username': ['', MaValidators.required()],
             'password': ['', MaValidators.required()],
         });
@@ -72,7 +81,7 @@ class LoginComponent {
     void login() {
         var password = this.loginForm.controls['password'].value;
         if (password == 'password123') {
-            this.router.navigate(['About']);
+            this.router.navigate(Routes.about.toUrl());
         } else {
             this.loginForm.controls['password'].setErrors({
                 'The password is incorrect.': ''

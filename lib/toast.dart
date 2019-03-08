@@ -6,7 +6,7 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
 @Component(
     selector: 'toast',
     templateUrl: 'toast.html',
-    directives: const [MA_DIRECTIVES, FA_DIRECTIVES]
+    directives: const [fontAwesomeDirectives, modularAdminDirectives]
 )
 class ToastComponent {
     /// Toast (a.k.a. pop-up notification) service.

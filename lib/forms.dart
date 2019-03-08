@@ -16,7 +16,8 @@ import 'package:ng_modular_admin/validators.dart' as MaValidators;
             max-width: 30em;
         }
     '''],
-    directives: const [CORE_DIRECTIVES, FaIcon, formDirectives, MA_DIRECTIVES]
+    directives: const [coreDirectives, FaIcon, formDirectives,
+        modularAdminDirectives]
 )
 class FormsComponent {
     ControlGroup demoForm;
@@ -29,8 +30,7 @@ class FormsComponent {
             new Breadcrumb(name: 'Components', icon: 'gears'),
             new Breadcrumb(name: 'Forms'),
         ];
-        final builder = new FormBuilder();
-        this.demoForm = builder.group({
+        this.demoForm = FormBuilder.controlGroup({
             'name': ['', MaValidators.required()],
             'age': ['', MaValidators.integer(min: 0)],
         });
