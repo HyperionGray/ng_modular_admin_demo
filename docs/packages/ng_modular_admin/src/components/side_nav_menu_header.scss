@@ -1,4 +1,4 @@
-@import 'modular-admin/component';
+@import '../modular-admin/component';
 
 // Menu headers are styled similar to side-nav-item, but don't use the
 // <a> tag. Maybe this could be refactored to a mixin to eliminate this
@@ -9,7 +9,13 @@
     font-size: 14px;
     color: var(--ma-side-nav-text-color);
     text-decoration: none;
-    padding: 15px 10px;
+    padding: 10px;
+
+    ::ng-deep fa {
+        margin-right: 0.5rem;
+        position: relative;
+        top: 0.05rem;
+    }
 }
 
 :host(:hover) {

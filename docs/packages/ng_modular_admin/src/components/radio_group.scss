@@ -1,4 +1,4 @@
-@import 'modular-admin/component';
+@import '../modular-admin/component';
 
 :host {
   display: block;
@@ -10,7 +10,7 @@
 
       &::after {
         visibility: visible;
-        font-family: FontAwesome;
+        font-family: "Font Awesome 5 Free";
         font-size: 1.2em;
         position: relative;
         top: -0.35em;
