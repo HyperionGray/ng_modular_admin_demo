@@ -38,14 +38,6 @@
     element. It's the HTML equivalent of providing a high-level API that
     abstracts over a low-level API.
   </p>
-  <p>
-    The web component movement is still small but growing.
-    <a href='https://www.polymer-project.org/1.0/'>Google Polymer</a> and
-    <a href='https://x-tag.readme.io/'>Microsoft X-Tag</a> are two major component
-    systems under development, but there isn't yet a single component library
-    that meets all of our needs, so we built <code>ng_modular_admin</code> to
-    fill the void.
-  </p>
 </ma-card>
 <ma-card>
   <h2>Getting Started</h2>
@@ -54,23 +46,15 @@
     the following:
   </p>
   <ol>
-    <li>Add ng_modular_admin as a dependency in <code>pubspec.yaml</code>.</li>
-    <li>Add the stylesheet to your <code>index.html</code> (see below)</li>
-    <li>Import the <code>package:ng_modular_admin/ng_modular_admin.dart</code> package and
-        add <code>modularAdminDirectives</code>code to your components' directives.</li>
+    <li>Add <code>ng_modular_admin</code> as a dependency in <code>pubspec.yaml</code>.</li>
+    <li>Create an SCSS stylesheet in your main web directory, e.g. <code>web/theme.scss</code> and put <code>@import "package:ng_modular_admin/src/modular-admin/modular-admin";</code> at the top of this file.</li>
+    <li>You can add any customizations you want to the SCSS stylesheet you created in step 2. The stylesheet will be built automatically when you use <code>webdev serve</code> or <code>webdev build</code>.</li>
+    <li>For any component where you want to use Modular Admin, import <code>package:ng_modular_admin/ng_modular_admin.dart</code> and add <code>modularAdminDirectives</code> to that component's directives.</li>
     <li>Look at the <a [routerLink]='Routes.layout.toUrl()'>Layout</a> page for information on setting up
         the application shell.</li>
   </ol>
   <p>
-    The stylesheet element should look like this:
-  </p>
-  <pre class='code'>{{"<link rel='stylesheet' type='text/css'
-      href='packages/ng_modular_admin/css/modular-admin.css'>"}}</pre>
-  <p>
-    If you're not familiar with Dart, read the
-    <a href="https://www.dartlang.org/guides/language">Language Overview</a>.
-    If you're not familiar with Angular Dart, read
-    <a href="https://webdev.dartlang.org/angular">About AngularDart</a>.
+    You should also be knowledgable about <a href="https://www.dartlang.org/guides/language">the Dart programming language</a> and <a href="https://webdev.dartlang.org/angular">AngularDart.</a>
   </p>
 </ma-card>
 <ma-card>
