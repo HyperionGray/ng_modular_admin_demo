@@ -1,0 +1,142 @@
+@import '../modular-admin/component';
+
+:host {
+  .content ::ng-deep {
+    fa:first-child {
+      margin-right: 0.5rem;
+    }
+
+    span + fa:last-child {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+button {
+  display: inline-block;
+  position: relative;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0;
+  margin-bottom: 5px;
+  margin-right: 1rem;
+
+  &.primary {
+    @include ma-button-variant(primary, var(--ma-button-text-color));
+  }
+
+  &.secondary {
+    @include ma-button-variant(secondary, var(--ma-button-text-color));
+  }
+
+  &.danger {
+    @include ma-button-variant(danger, var(--ma-button-text-color));
+  }
+
+  &.info {
+    @include ma-button-variant(info, var(--ma-button-text-color));
+  }
+
+  &.success {
+    @include ma-button-variant(success, var(--ma-button-text-color));
+  }
+
+  &.warning {
+    @include ma-button-variant(warning, var(--ma-button-text-color));
+  }
+
+  &.link {
+    border: none;
+    color: var(--ma-primary-color-dark);
+    background-color: transparent;
+
+    &:hover:not(:disabled) {
+      color: var(--ma-primary-color-darker);
+      background-color: var(--ma-background-color);
+    }
+
+    &:active:not(:disabled) {
+      color: var(--ma-primary-color-lighter);
+    }
+  }
+
+  &.large {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    .busy-spinner {
+      font-size: 28px;
+    }
+  }
+
+  &.small {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    .busy-spinner {
+      font-size: 14px;
+    }
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
+  &.pill-left {
+    // Set border radius to a very large value: the browser will clamp it
+    // to a perfect circle based on the size of the button.
+    border-top-left-radius: 1000px;
+    border-bottom-left-radius: 1000px;
+    padding-left: 1.3rem;
+  }
+
+  &.pill-right {
+    // Set border radius to a very large value: the browser will clamp it
+    // to a perfect circle based on the size of the button.
+    border-top-right-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+    padding-right: 1.3rem;
+  }
+
+  .busy-spinner {
+    position: absolute;
+    top: 0.25em;
+    left: 0;
+    right: 0;
+    font-size: 21px; // One of the recommended sizes to avoid wobble.
+  }
+}
+
+// Buttons in the top nav are styled completely differently.
+:host-context(.is-top-nav) button {
+  color: var(--ma-secondary-color-light);
+  background-color: transparent;
+  border: 1px solid var(--ma-secondary-color-light);
+  border-radius: 0.2rem;
+
+  &:hover:not(:disabled) {
+    background-color: transparent;
+    color: var(--ma-secondary-color-darker);
+    border-color: var(--ma-secondary-color-darker);
+  }
+
+  &:active:not(:disabled) {
+    color: var(--ma-divider-color);
+    background-color: var(--ma-secondary-color);
+  }
+}
+
+// Buttons in a group should be shifted over 1 pixel so their
+// borders overlap. (Note that ma-button-group is an inline-flex
+// container, so it handles removal of whitespace between buttons.)
+:host-context(.is-button-group) button {
+  margin-left: -1px;
+  margin-right: 0;
+}
