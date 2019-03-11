@@ -21,7 +21,7 @@ import 'typography.template.dart' as typography_template;
 
 class Routes {
     static final about = RouteDefinition(
-        routePath: RoutePath(path: 'about', useAsDefault:true),
+        routePath: RoutePath(path: 'about'),
         component: about_template.AboutComponentNgFactory);
     static final buttons = RouteDefinition(
         routePath: RoutePath(path: 'buttons'),
@@ -75,6 +75,8 @@ class Routes {
         routePath: RoutePath(path: 'typography'),
         component: typography_template.TypographyComponentNgFactory);
 
+    static final root = RouteDefinition.redirect(path: '', redirectTo: 'about');
+
     static final all = <RouteDefinition>[
         about,
         buttons,
@@ -86,6 +88,7 @@ class Routes {
         login,
         overlay,
         pagers,
+        root,
         sideNav,
         signUp,
         tables,
