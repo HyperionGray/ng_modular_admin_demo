@@ -13,7 +13,7 @@ class TablesComponent {
     TablesComponent(this._doc) {
         this._doc.title = 'Tables';
         this._doc.breadcrumbs = [
-            new Breadcrumb(name: 'Components', icon: 'gears'),
+            new Breadcrumb(name: 'Components', icon: 'toolbox'),
             new Breadcrumb(name: 'Tables'),
         ];
     }

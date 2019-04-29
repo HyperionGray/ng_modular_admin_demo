@@ -21,7 +21,7 @@ class PagersComponent {
     PagersComponent(this._doc) {
         this._doc.title = 'Pagers';
         this._doc.breadcrumbs = [
-            new Breadcrumb(name: 'Components', icon: 'gears'),
+            new Breadcrumb(name: 'Components', icon: 'toolbox'),
             new Breadcrumb(name: 'Pagers'),
         ];
         this.updateItems();

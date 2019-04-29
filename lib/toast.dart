@@ -18,7 +18,7 @@ class ToastComponent {
     ToastComponent(this._doc, this.toastService) {
         this._doc.title = 'Toast';
         this._doc.breadcrumbs = [
-            new Breadcrumb(name: 'Components', icon: 'gears'),
+            new Breadcrumb(name: 'Components', icon: 'toolbox'),
             new Breadcrumb(name: 'Toast'),
         ];
     }

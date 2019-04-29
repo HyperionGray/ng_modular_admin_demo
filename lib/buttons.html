@@ -4,27 +4,42 @@
     <p class='lead'>There are 7 color schemes for buttons.</p>
     <p><em>Open the developer console to view button events.</em></p>
     <p>
-      <ma-button type='primary'
-                 (click)='showClickAlert($event)'>Primary</ma-button>
-      <ma-button type='secondary'
-                 (click)='showClickAlert($event)'>Secondary</ma-button>
-      <ma-button type='link'
-                 (click)='showClickAlert($event)'>Link</ma-button>
-      <ma-button type='success'
-                 (click)='showClickAlert($event)'>Success</ma-button>
-      <ma-button type='info'
-                 (click)='showClickAlert($event)'>Info</ma-button>
-      <ma-button type='warning'
-                 (click)='showClickAlert($event)'>Warning</ma-button>
-      <ma-button type='danger'
-                 (click)='showClickAlert($event)'>Danger</ma-button>
+      <ma-button #primaryButton type='primary'
+                 (click)='showClickAlert($event, primaryButton)'>
+        Primary
+      </ma-button>
+      <ma-button #secondaryButton type='secondary'
+                 (click)='showClickAlert($event, secondaryButton)'>
+        Secondary
+      </ma-button>
+      <ma-button #linkButton type='link'
+                 (click)='showClickAlert($event, linkButton)'>
+        Link
+      </ma-button>
+      <ma-button #successButton type='success'
+                 (click)='showClickAlert($event, successButton)'>
+        Success
+      </ma-button>
+      <ma-button #infoButton type='info'
+                 (click)='showClickAlert($event, infoButton)'>
+        Info
+      </ma-button>
+      <ma-button #warningButton type='warning'
+                 (click)='showClickAlert($event, warningButton)'>
+        Warning
+      </ma-button>
+      <ma-button #dangerButton type='danger'
+                 (click)='showClickAlert($event, dangerButton)'>
+        Danger
+      </ma-button>
     </p>
     <p>Example markup:</p>
-    <pre class='code'>&lt;ma-button
-  type=&apos;primary&apos;
-  (click)=&apos;showClickAlert($event)&apos;&gt;
-    Primary
-&lt;/ma-button&gt;</pre>
+    <pre class='code'>{{"<ma-button #primaryButton
+    type='primary'
+    (click)='showClickAlert($event,
+             primaryButton)'>
+  Primary
+</ma-button>"}}</pre>
     <p>
       Set the <code>type</code> to <code>primary</code>,
       <code>secondary</code>, <code>link</code>, <code>success</code>,
@@ -32,23 +47,23 @@
       <code>click</code> emitter fires when the button is clicked.
     </p>
     <p>
-      Modular Admin fires a special <code>Click</code> event that contains a
-      reference to an underlying <code>MouseEvent</code> and a reference to the
-      <code>Button</code>.
+      If you want a reference to the button component, e.g. to set its busy
+      state, use a component spy like <code>#primaryButton</code>.
     </p>
-    <pre class='code'>void showClickAlert(ButtonClick click) {
-  var target = (click.event
-    .currentTarget) as Element;
+    <pre class='code'>{{"void showClickAlert(MouseEvent event,
+      Button button) {
+  var target = (event.currentTarget)
+    as Element;
   var text = target.text.trim()
   window.console.log(
     'You clicked on $text.'
   );
-  click.button.busy = true;
+  button.busy = true;
   new Timer(
     new Duration(seconds:1),
-    () => click.button.busy = false
+    () => button.busy = false
   );
-}</pre>
+}"}}</pre>
   <p>
     The event handler attached to all of the buttons on this page prints the
     button's text to the console and sets the button's busy state for 1 second.
@@ -77,191 +92,210 @@
     &#x3C;fa name=&#x27;google&#x27;&#x3E;&#x3C;/fa&#x3E;
     Google
 &#x3C;/ma-button&#x3E;</pre>
-  </ma-card>
-  <ma-card>
-    <h2>Links</h2>
     <p class='lead'>A link may be styled to resemble a button.</p>
     <p>
-      Link buttons are useful when placing real buttons and links on the same
-      line. A link button will be sized correctly and will look a bit like a
-      button.
+      Links that look like buttons are useful when placing real buttons and
+      links on the same line.
     </p>
     <p>
-      <ma-button type='primary'
-                 (click)='showClickAlert($event)'>Button</ma-button>
+      <ma-button #linkButton type='primary'
+                 (click)='showClickAlert($event, linkButton)'>Button</ma-button>
       <a class='button' href='http://google.com'>Link</a>
     </p>
     <p>Example markup:</p>
-    <pre class='code'>&lt;ma-button
-  type=&apos;primary&apos;
-  (click)=&apos;showClickAlert($event)&apos;&gt;
-    Primary
-&lt;/ma-button&gt;</pre>
-    <p>
-      Set the <code>type</code> to <code>primary</code>,
-      <code>secondary</code>, <code>success</code>, <code>info</code>,
-      <code>warning</code>, or <code>danger</code>. The <code>click</code>
-      emitter fires when the button is clicked.
-    </p>
+    <pre class='code'>{{"<a class='button'
+   href='http://google.com'>Link</a>"}}</pre>
   </ma-card>
   <ma-card>
     <h2>Outlines</h2>
     <p class='lead'>Buttons can be outlines instead of solid colors.</p>
     <p>
-      <ma-button type='primary'
+      <ma-button #primaryOutlineButton type='primary'
                  [outline]='true'
-                 (click)='showClickAlert($event)'>Primary</ma-button>
-      <ma-button type='secondary'
+                 (click)='showClickAlert($event, primaryOutlineButton)'>
+        Primary
+      </ma-button>
+      <ma-button #secondaryOutlineButton type='secondary'
                  [outline]='true'
-                 (click)='showClickAlert($event)'>Secondary</ma-button>
-      <ma-button type='success'
+                 (click)='showClickAlert($event, secondaryOutlineButton)'>
+        Secondary
+      </ma-button>
+      <ma-button #successOutlineButton type='success'
                  [outline]='true'
-                 (click)='showClickAlert($event)'>Success</ma-button>
-      <ma-button type='info'
+                 (click)='showClickAlert($event, successOutlineButton)'>
+        Success
+      </ma-button>
+      <ma-button #infoOutlineButton type='info'
                  [outline]='true'
-                 (click)='showClickAlert($event)'>Info</ma-button>
-      <ma-button type='warning'
+                 (click)='showClickAlert($event, infoOutlineButton)'>
+        Info
+      </ma-button>
+      <ma-button #warningOutlineButton type='warning'
                  [outline]='true'
-                 (click)='showClickAlert($event)'>Warning</ma-button>
-      <ma-button type='danger'
+                 (click)='showClickAlert($event, warningOutlineButton)'>
+        Warning
+      </ma-button>
+      <ma-button #dangerOutlineButton type='danger'
                  [outline]='true'
-                 (click)='showClickAlert($event)'>Danger</ma-button>
+                 (click)='showClickAlert($event, dangerOutlineButton)'>
+        Danger
+      </ma-button>
     </p>
     <p>
       Set the <code>[outline]</code> property to <code>true</code>
       to render a button with outlines.
     </p>
-    <pre class='code'>&lt;ma-button
-  type=&apos;primary&apos;
-  [outline]=&apos;true&apos;
-  (click)=&apos;showClickAlert($event)&apos;&gt;
+    <pre class='code'>{{"<ma-button
+  type='primary'
+  [outline]='true'>
     Primary
-&lt;/ma-button&gt;</pre>
+</ma-button>"}}</pre>
   </ma-card>
   <ma-card>
     <h2>Sizes</h2>
     <p class='lead'>Buttons come in 3 sizes.</p>
     <p>
-      <ma-button type='primary'
+      <ma-button #primarySmallButton type='primary'
                  size='small'
-                 (click)='showClickAlert($event)'>Small</ma-button>
-      <ma-button type='primary'
-                 (click)='showClickAlert($event)'>Medium</ma-button>
-      <ma-button type='primary'
+                 (click)='showClickAlert($event, primarySmallButton)'>
+        Small
+      </ma-button>
+      <ma-button #primaryMediumButton type='primary'
+                 (click)='showClickAlert($event, primaryMediumButton)'>
+        Medium
+      </ma-button>
+      <ma-button #primaryLargeButton type='primary'
                  size='large'
-                 (click)='showClickAlert($event)'>Large</ma-button>
+                 (click)='showClickAlert($event, primaryLargeButton)'>
+        Large
+      </ma-button>
     </p>
     <p>
       Set the <code>size</code> property to <code>small</code>,
       <code>medium</code>, or <code>large</code>. The default is medium.
     </p>
-    <pre class='code'>&lt;ma-button
-  type=&apos;primary&apos;
-  size=&apos;small&apos;
-  (click)=&apos;showClickAlert($event)&apos;&gt;
+    <pre class='code'>{{"<ma-button
+  type='primary'
+  size='small'>
     Small
-&lt;/ma-button&gt;</pre>
+</ma-button>"}}</pre>
   </ma-card>
   <ma-card>
     <h2>Blocks</h2>
     <p class='lead'>A button can be a 100% width block element.</p>
     <p>
-      <ma-button type='success'
+      <ma-button #blockButton type='success'
                  [block]='true'
-                 (click)='showClickAlert($event)'>Block</ma-button>
+                 (click)='showClickAlert($event, blockButton)'>Block</ma-button>
     </p>
     <p>
       Set the <code>[block]</code> property to <code>true</code>
       to render a button as a block element.
     </p>
-    <pre class='code'>&lt;ma-button
-  type=&apos;success&apos;
-  [block]=&apos;true&apos;
-  (click)=&apos;showClickAlert($event)&apos;&gt;
+    <pre class='code'>{{"<ma-button
+  type='success'
+  [block]='true'>
      Block
-&lt;/ma-button&gt;</pre>
+</ma-button>"}}</pre>
   </ma-card>
   <ma-card>
     <h2>Groups</h2>
     <p class='lead'>Buttons can be grouped together.</p>
     <p>
       <ma-button-group>
-        <ma-button type='info'
-                   (click)='showClickAlert($event)'>Left</ma-button>
-        <ma-button type='info'
-                   (click)='showClickAlert($event)'>Middle</ma-button>
-        <ma-button type='info'
-                   (click)='showClickAlert($event)'>Right</ma-button>
+        <ma-button #groupLeftButton type='info'
+                   (click)='showClickAlert($event, groupLeftButton)'>
+          Left
+        </ma-button>
+        <ma-button #groupMiddleButton type='info'
+                   (click)='showClickAlert($event, groupMiddleButton)'>
+          Middle
+        </ma-button>
+        <ma-button #groupRightButton type='info'
+                   (click)='showClickAlert($event, groupRightButton)'>
+          Right
+        </ma-button>
       </ma-button-group>
       <ma-button-group>
-        <ma-button type='info'
+        <ma-button #groupLeftOutlineButton type='info'
                    [outline]='true'
-                   (click)='showClickAlert($event)'>Left</ma-button>
-        <ma-button type='info'
+                   (click)='showClickAlert($event, groupLeftOutlineButton)'>
+          Left
+        </ma-button>
+        <ma-button #groupMiddleOutlineButton type='info'
                    [outline]='true'
-                   (click)='showClickAlert($event)'>Middle</ma-button>
-        <ma-button type='info'
+                   (click)='showClickAlert($event, groupMiddleOutlineButton)'>
+          Middle
+        </ma-button>
+        <ma-button #groupRightOutlineButton type='info'
                    [outline]='true'
-                   (click)='showClickAlert($event)'>Right</ma-button>
+                   (click)='showClickAlert($event, groupRightOutlineButton)'>
+          Right
+        </ma-button>
       </ma-button-group>
     </p>
     <p>
       Wrap two or more <code>&lt;ma-button&gt;</code> elements with a
       <code>&lt;ma-button-group&gt;</code> to render them as a group.
     </p>
-    <pre class='code'>&lt;ma-button-group&gt;
-  &lt;ma-button
-    type=&apos;info&apos;
-    (click)=&apos;showClickAlert($event)&apos;&gt;
+    <pre class='code'>{{"<ma-button-group>
+  <ma-button type='info'>
       Left
-  &lt;/ma-button&gt;
-  &lt;ma-button
-    type=&apos;info&apos;
-    (click)=&apos;showClickAlert($event)&apos;&gt;
+  </ma-button>
+  <ma-button type='info'>
       Middle
-  &lt;/ma-button&gt;
-  &lt;ma-button
-    type=&apos;info&apos;
-    (click)=&apos;showClickAlert($event)&apos;&gt;
+  </ma-button>
+  <ma-button type='info'>
       Right
-  &lt;/ma-button&gt;
-&lt;/ma-button-group&gt;</pre>
+  </ma-button>
+</ma-button-group>"}}</pre>
   </ma-card>
   <ma-card>
     <h2>Shapes</h2>
     <p class='lead'>A button can have rounded corners.</p>
     <p>
-      <ma-button type='warning'
+      <ma-button #pillLeftButton type='warning'
                  pill='left'
-                 (click)='showClickAlert($event)'>Pill Left</ma-button>
-      <ma-button type='warning'
+                 (click)='showClickAlert($event, pillLeftButton)'>
+        Pill Left
+      </ma-button>
+      <ma-button #pillRightButton type='warning'
                  pill='right'
-                 (click)='showClickAlert($event)'>Pill Right</ma-button>
-      <ma-button type='warning'
+                 (click)='showClickAlert($event, pillRightButton)'>
+        Pill Right
+      </ma-button>
+      <ma-button #pillBothButton type='warning'
                  pill='both'
-                 (click)='showClickAlert($event)'>Pill Both</ma-button>
+                 (click)='showClickAlert($event, pillBothButton)'>
+        Pill Both
+      </ma-button>
     </p>
     <p>
       Set the <code>pill</code> property to <code>left</code>,
       <code>right</code>, or <code>both</code>.
     </p>
-    <pre class='code'>&lt;ma-button
-  type=&apos;warning&apos;
-  pill=&apos;left&apos;
-  (click)=&apos;showClickAlert($event)&apos;&gt;
+    <pre class='code'>{{"<ma-button
+  type='warning'
+  pill='left'>
     Pill Left
-&lt;/ma-button&gt;</pre>
+</ma-button>"}}</pre>
     <p>Pills work nicely with button groups.</p>
     <p>
       <ma-button-group>
-        <ma-button type='danger'
+        <ma-button #pillLeftGroupButton type='danger'
                    pill='left'
-                   (click)='showClickAlert($event)'>Left</ma-button>
-        <ma-button type='danger'
-                   (click)='showClickAlert($event)'>Middle</ma-button>
-        <ma-button type='danger'
+                   (click)='showClickAlert($event, pillLeftGroupButton)'>
+          Left
+        </ma-button>
+        <ma-button #pillRightGroupButton type='danger'
+                   (click)='showClickAlert($event, pillRightGroupButton)'>
+          Middle
+        </ma-button>
+        <ma-button #pillBothGroupButton type='danger'
                    pill='right'
-                   (click)='showClickAlert($event)'>Right</ma-button>
+                   (click)='showClickAlert($event, pillBothGroupButton)'>
+          Right
+        </ma-button>
       </ma-button-group>
     </p>
   </ma-card>
@@ -271,16 +305,18 @@
     <p>
       A button's disabled or busy state may be manipulated inside an event
       handler (as seen in the first card on this page) or may be set via
-      component attributes.
+      component attributes. <strong>Note: disabled and busy buttons still
+      receive click events!</strong> If you do not want to receive click events,
+      you should check the button state.
     </p>
     <p>
-      <ma-button (click)='showClickAlertNoBusy($event)'
+      <ma-button (click)='showClickAlert($event)'
                  [disabled]='disabledDemo'>Disable Demo</ma-button>
       <input id='disabledDemo' type='checkbox' [(ngModel)]='disabledDemo'>
       <label for='disabledDemo'>Disabled</label>
     </p>
     <p>
-      <ma-button (click)='showClickAlertNoBusy($event)'
+      <ma-button (click)='showClickAlert($event)'
                  [busy]='busyDemo'>Busy Demo</ma-button>
       <input id='busyDemo' type='checkbox' [(ngModel)]='busyDemo'>
       <label for='busyDemo'>Busy</label>
@@ -296,29 +332,30 @@
     <h2>Icons</h2>
     <p class='lead'>Enhance buttons with inline icons.</p>
     <p>
-      An icon on the left side of the text has a right margin applied so that
-      it doesn't touch the text.
+      An icon inside of a button has margin applied when it is next to text.
+      If a button contains an icon without text, the icon will be centered
+      instead.
     </p>
     <p>
-      <ma-button size='large' (click)='showClickAlert($event)'>
-        <fa name='cat'></fa> Cat
+      <ma-button #cat1Button size='large'
+                 (click)='showClickAlert($event, cat1Button)'>
+        <fa name='cat'></fa>
+      </ma-button>
+      <ma-button #cat2Button size='large'
+                 (click)='showClickAlert($event, cat2Button)'>
+        <fa name='cat'></fa> <span>Cat</span>
       </ma-button>
     </p>
     <pre class='code'>{{"<ma-button size='large'>
-  <fa name='cat'></fa> Cat
+  <fa name='cat'></fa>
+</ma-button>
+<ma-button size='large'>
+  <fa name='cat'></fa>
+  <span>Cat</span>
 </ma-button>"}}</pre>
-    <p>
-      An icon on the right side of the text has a left margin applied <em>if it
-      follows a span element</em> (this restriction is necessary because CSS
-      selectors do not apply to text nodes).
-    </p>
-    <p>
-      <ma-button size='large' (click)='showClickAlert($event)'>
-        <span>Dog</span><fa name='dog'></fa>
-      </ma-button>
-    </p>
-    <pre class='code'>{{"<ma-button size='large'>
-  <span>Dog</span><fa name='dog'></fa>
-</ma-button>"}}</pre>
+  <p>
+      <strong>Note: the button text needs to be inside a span element in order
+      to have spacing between icon and text.</strong>
+  </p>
   </ma-card>
 </div>

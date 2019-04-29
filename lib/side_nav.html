@@ -9,25 +9,25 @@
     anchor tags. Items may be grouped together into menus. The item matching the
     current route is automatically highlighted with the primary color.
   </p>
-  <pre class='code'>&lt;ma-side-nav&gt;
-  &lt;ma-side-nav-header&gt;
-    &lt;ma-logo&gt;&lt;/ma-logo&gt; Ng2 Mod Admin
-  &lt;/ma-side-nav-header&gt;
-  &lt;ma-side-nav-item [routerLink]=&apos;[&quot;About&quot;]&apos;&gt;
-    &lt;fa name=&apos;home&apos; [fw]=&apos;true&apos; size=&apos;lg&apos;&gt;&lt;/fa&gt; About
-  &lt;/ma-side-nav-item&gt;
+  <pre class='code'>{{"<ma-side-nav>
+  <ma-side-nav-header>
+    <ma-logo></ma-logo> Modular Admin
+  </ma-side-nav-header>
+  <ma-side-nav-item [route]='Routes.about.toUrl()'>
+    <fa name='home' [fw]='true' size='lg'></fa> About
+  </ma-side-nav-item>
   …
-  &lt;ma-side-nav-menu&gt;
-    &lt;ma-side-nav-menu-header&gt;
-      &lt;fa name=&apos;gears&apos; [fw]=&apos;true&apos; size=&apos;lg&apos;&gt;&lt;/fa&gt; Components
-    &lt;/ma-side-nav-menu-header&gt;
-    &lt;ma-side-nav-item [routerLink]=&apos;[&quot;Buttons&quot;]&apos;&gt;
+  <ma-side-nav-menu>
+    <ma-side-nav-menu-header>
+      <fa name='gears' [fw]='true' size='lg'></fa> Components
+    </ma-side-nav-menu-header>
+    <ma-side-nav-item [router]='Routes.buttons.toUrl()'>
       Buttons
-    &lt;/ma-side-nav-item&gt;
+    </ma-side-nav-item>
     …
-  &lt;/ma-side-nav-menu&gt;
+  </ma-side-nav-menu>
   …
-&lt;/ma-side-nav&gt;</pre>
+</ma-side-nav>"}}</pre>
   <p>
     The side navigation may be fixed (doesn't move when you scroll the content) or
     static (scrolls with the content).

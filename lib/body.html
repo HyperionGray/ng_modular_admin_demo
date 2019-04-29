@@ -13,32 +13,32 @@
     <ma-side-nav-header>
       <ma-logo></ma-logo> Modular Admin
     </ma-side-nav-header>
-    <ma-side-nav-item [route]='Routes.about'>
+    <ma-side-nav-item [route]='Routes.about.toUrl()'>
       <fa class='foo' name='info-circle' [fw]='true' size='lg'></fa> About
       <ma-tag type='primary' [pill]='true' class='float-xs-right'>{{tagsService.aboutBadge}}</ma-tag>
     </ma-side-nav-item>
-    <ma-side-nav-item [route]='Routes.layout'>
+    <ma-side-nav-item [route]='Routes.layout.toUrl()'>
       <fa name='th' [fw]='true' size='lg'></fa> Layout
       <ma-tag type='info' [pill]='true' class='float-xs-right'>{{tagsService.layoutBadge}}</ma-tag>
     </ma-side-nav-item>
-    <ma-side-nav-item [route]='Routes.themes'>
+    <ma-side-nav-item [route]='Routes.themes.toUrl()'>
       <fa name='paint-brush' [fw]='true' size='lg'></fa> Themes
       <ma-tag type='danger' [pill]='true' class='float-xs-right'>{{tagsService.themesBadge}}</ma-tag>
     </ma-side-nav-item>
-    <ma-side-nav-item [route]='Routes.typography'>
+    <ma-side-nav-item [route]='Routes.typography.toUrl()'>
       <fa name='font' [fw]='true' size='lg'></fa> Typography
     </ma-side-nav-item>
     <ma-side-nav-menu>
       <ma-side-nav-menu-header>
         <fa name='map-signs' [fw]='true' size='lg'></fa> Navigation
       </ma-side-nav-menu-header>
-      <ma-side-nav-item [route]='Routes.topNav'>
+      <ma-side-nav-item [route]='Routes.topNav.toUrl()'>
         Top Navigation
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='Routes.sideNav'>
+      <ma-side-nav-item [route]='Routes.sideNav.toUrl()'>
         Side Navigation
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='Routes.footer'>
+      <ma-side-nav-item [route]='Routes.footer.toUrl()'>
         Footer
       </ma-side-nav-item>
     </ma-side-nav-menu>
@@ -46,31 +46,31 @@
       <ma-side-nav-menu-header>
         <fa name='toolbox' [fw]='true' size='lg'></fa> Components
       </ma-side-nav-menu-header>
-      <ma-side-nav-item [route]='Routes.buttons'>
+      <ma-side-nav-item [route]='Routes.buttons.toUrl()'>
         Buttons
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='Routes.cards'>
+      <ma-side-nav-item [route]='Routes.cards.toUrl()'>
         Cards
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='Routes.forms'>
+      <ma-side-nav-item [route]='Routes.forms.toUrl()'>
         Forms
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='Routes.listGroup'>
+      <ma-side-nav-item [route]='Routes.listGroup.toUrl()'>
         List Group
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='Routes.overlay'>
+      <ma-side-nav-item [route]='Routes.overlay.toUrl()'>
         Overlay
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='Routes.pagers'>
+      <ma-side-nav-item [route]='Routes.pagers.toUrl()'>
         Pagers
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='Routes.tables'>
+      <ma-side-nav-item [route]='Routes.tables.toUrl()'>
         Tables
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='Routes.tags'>
+      <ma-side-nav-item [route]='Routes.tags.toUrl()'>
         Tags
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='Routes.toast'>
+      <ma-side-nav-item [route]='Routes.toast.toUrl()'>
         Toast
       </ma-side-nav-item>
     </ma-side-nav-menu>
@@ -78,10 +78,10 @@
       <ma-side-nav-menu-header>
         <fa name='file-code' [fw]='true' size='lg'></fa> Pages
       </ma-side-nav-menu-header>
-      <ma-side-nav-item [route]='Routes.login'>
+      <ma-side-nav-item [route]='Routes.login.toUrl()'>
         Log In
       </ma-side-nav-item>
-      <ma-side-nav-item [route]='Routes.signUp'>
+      <ma-side-nav-item [route]='Routes.signUp.toUrl()'>
         Sign Up
       </ma-side-nav-item>
     </ma-side-nav-menu>

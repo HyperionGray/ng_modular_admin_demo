@@ -26,7 +26,7 @@ class OverlayComponent {
     OverlayComponent(this._doc) {
         this._doc.title = 'Overlay';
         this._doc.breadcrumbs = [
-            new Breadcrumb(name: 'Components', icon: 'gears'),
+            new Breadcrumb(name: 'Components', icon: 'toolbox'),
             new Breadcrumb(name: 'Overlay'),
         ];
     }

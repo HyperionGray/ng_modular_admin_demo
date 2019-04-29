@@ -16,11 +16,11 @@
         <input type='text'
                placeholder='Placeholder text'>
       </ma-input-group>
-      <pre class='code'>&#x3C;ma-input-group&#x3E;
-  &#x3C;label&#x3E;Text Input&#x3C;/label&#x3E;
-  &#x3C;input type=&#x27;text&#x27;
-    placeholder=&#x27;Placeholder text&#x27;&#x3E;
-&#x3C;/ma-input-group&#x3E;</pre>
+      <pre class='code'>{{"<ma-input-group>
+  <label>Text Input</label>
+  <input type='text'
+    placeholder='Placeholder text'>
+</ma-input-group>"}}</pre>
       <p>
         Add the attribute <code>[inline]='true'</code> to display the input
         inline with its label. Use CSS width to line up the labels.
@@ -35,20 +35,20 @@
         <input type='password'
                placeholder='Placeholder text'>
       </ma-input-group>
-      <pre class='code'>&lt;ma-input-group [inline]=&apos;true&apos;&gt;
-  &lt;label style=&apos;width: 7em&apos;&gt;
+      <pre class='code'>{{"<ma-input-group [inline]='true'>
+  <label style='width: 7em'>
     Name
-  &lt;/label&gt;
-  &lt;input type=&apos;text&apos;
-    placeholder=&apos;Placeholder text&apos;&gt;
-&lt;/ma-input-group&gt;
-&lt;ma-input-group [inline]=&apos;true&apos;&gt;
-  &lt;label style=&apos;width: 7em&apos;&gt;
+  </label>
+  <input type='text'
+    placeholder='Placeholder text'>
+</ma-input-group>
+<ma-input-group [inline]='true'>
+  <label style='width: 7em'>
     Password
-  &lt;/label&gt;
-  &lt;input type=&apos;password&apos;
-    placeholder=&apos;Placeholder text&apos;&gt;
-&lt;/ma-input-group&gt;</pre>
+  </label>
+  <input type='password'
+    placeholder='Placeholder text'>
+</ma-input-group>"}}</pre>
       <p>
         Use the boolean attributes <code>disabled</code> or <code>readonly</code>
         to make immutable form controls.
@@ -65,20 +65,20 @@
                value='Value text'
                readonly>
       </ma-input-group>
-      <pre class='code'>&#x3C;ma-input-group&#x3E;
-  &#x3C;label&#x3E;Disabled Input&#x3C;/label&#x3E;
-  &#x3C;input
-    type=&#x27;text&#x27;
-    placeholder=&#x27;Placeholder text&#x27;
-    disabled&#x3E;
-&#x3C;/ma-input-group&#x3E;
-&#x3C;ma-input-group&#x3E;
-  &#x3C;label&#x3E;Read-only Input&#x3C;/label&#x3E;
-  &#x3C;input
-    type=&#x27;text&#x27;
-    value=&#x27;Value text&#x27;
-    readonly&#x3E;
-&#x3C;/ma-input-group&#x3E;</pre>
+      <pre class='code'>{{"<ma-input-group>
+  <label>Disabled Input</label>
+  <input
+    type='text'
+    placeholder='Placeholder text'
+    disabled>
+</ma-input-group>
+<ma-input-group>
+  <label>Read-only Input</label>
+  <input
+    type='text'
+    value='Value text'
+    readonly>
+</ma-input-group>"}}</pre>
       <p>
         A <code>&lt;textarea&gt;</code> may also be placed into an input group.
       </p>
@@ -86,10 +86,10 @@
         <label>Textarea</label>
         <textarea>Content text</textarea>
       </ma-input-group>
-      <pre class='code'>&#x3C;ma-input-group&#x3E;
-  &#x3C;label&#x3E;Textarea&#x3C;/label&#x3E;
-  &#x3C;textarea&#x3E;Content text&#x3C;/textarea&#x3E;
-&#x3C;/ma-input-group&#x3E;</pre>
+      <pre class='code'>{{"<ma-input-group>
+  <label>Textarea</label>
+  <textarea>Content text</textarea>
+</ma-input-group>"}}</pre>
     </ma-card>
   </div>
   <div class='col-lg'>
@@ -138,12 +138,12 @@
         <label>Textarea</label>
         <textarea class='underlined'>Content text</textarea>
       </ma-input-group>
-      <pre class='code'>&#x3C;ma-input-group&#x3E;
-  &#x3C;label&#x3E;Textarea&#x3C;/label&#x3E;
-  &#x3C;textarea class=&#x27;underlined&#x27;&#x3E;
+      <pre class='code'>{{"<ma-input-group>
+  <label>Textarea</label>
+  <textarea class='underlined'>
     Content text
-  &#x3C;/textarea&#x3E;
-&#x3C;/ma-input-group&#x3E;</pre>
+  </textarea>
+</ma-input-group>"}}</pre>
     </ma-card>
     <ma-card>
       <h2>Add Ons</h2>
@@ -162,14 +162,14 @@
           <span>.00</span>
         </span>
       </ma-input-group>
-      <pre class='code'>&#x3C;ma-input-group&#x3E;
-  &#x3C;span class=&#x27;ma-add-ons&#x27;&#x3E;
-    &#x3C;span&#x3E;$&#x3C;/span&#x3E;
-    &#x3C;input type=&#x27;text&#x27;
-      placeholder=&#x27;Enter price&#x27;&#x3E;
-    &#x3C;span&#x3E;.00&#x3C;/span&#x3E;
-  &#x3C;/span&#x3E;
-&#x3C;/ma-input-group&#x3E;</pre>
+      <pre class='code'>{{"<ma-input-group>
+  <span class='ma-add-ons'>
+    <span>$</span>
+    <input type='text'
+      placeholder='Enter price'>
+    <span>.00</span>
+  </span>
+</ma-input-group>"}}</pre>
     </ma-card>
     <ma-card>
       <h2>Sizes</h2>
@@ -185,18 +185,18 @@
           </span>
         </label>
       </ma-input-group>
-      <pre class='code'>&#x3C;ma-input-group
-  style=&#x27;font-size: 20pt;&#x27;&#x3E;
-  &#x3C;label&#x3E;
-    &#x3C;span class=&#x27;ma-add-ons&#x27;&#x3E;
-      &#x3C;input type=&#x27;text&#x27;
-        placeholder=&#x27;Enter date&#x27;&#x3E;
-      &#x3C;span&#x3E;
-        &#x3C;fa name=&#x27;calendar&#x27;&#x3E;&#x3C;/fa&#x3E;
-      &#x3C;/span&#x3E;
-    &#x3C;/span&#x3E;
-  &#x3C;/label&#x3E;
-&#x3C;/ma-input-group&#x3E;</pre>
+      <pre class='code'>{{"<ma-input-group
+  style='font-size: 20pt;'>
+  <label>
+    <span class='ma-add-ons'>
+      <input type='text'
+        placeholder='Enter date'>
+      <span>
+        <fa name='calendar'></fa>
+      </span>
+    </span>
+  </label>
+</ma-input-group>"}}</pre>
     </ma-card>
   </div>
 </div>
@@ -219,13 +219,13 @@
           <option>Violet</option>
         </select>
       </ma-input-group>
-      <pre class='code'>&lt;ma-input-group&gt;
-  &lt;label&gt;Color&lt;/label&gt;
-  &lt;select&gt;
-    &lt;option&gt;Red&lt;/option&gt;
-    &lt;option&gt;…&lt;/option&gt;
-  &lt;/select&gt;
-&lt;/ma-input-group&gt;</pre>
+      <pre class='code'>{{"<ma-input-group>
+  <label>Color</label>
+  <select>
+    <option>Red</option>
+    <option>…</option>
+  </select>
+</ma-input-group>"}}</pre>
     </ma-card>
   </div>
 </div>
@@ -243,20 +243,20 @@
         <label><input type='radio'> Braden Holtby</label>
         <label><input type='radio' disabled> Sidney Crosby</label>
       </ma-radio-group>
-      <pre class='code'>&#x3C;ma-radio-group&#x3E;
-  &#x3C;label&#x3E;
+      <pre class='code'>{{"<ma-radio-group>
+  <label>
     Favorite Player
-  &#x3C;/label&#x3E;
-  &#x3C;label&#x3E;
-    &#x3C;input type=&#x27;radio&#x27; checked&#x3E;
+  </label>
+  <label>
+    <input type='radio' checked>
     Alex Ovechkin
-  &#x3C;/label&#x3E;
+  </label>
   …
-  &#x3C;label&#x3E;
-    &#x3C;input type=&#x27;radio&#x27; disabled&#x3E;
+  <label>
+    <input type='radio' disabled>
     Sidney Crosby
-  &#x3C;/label&#x3E;
-&#x3C;/ma-radio-group&#x3E;</pre>
+  </label>
+</ma-radio-group>"}}</pre>
       <p>
         Set the property <code>[inline]</code> to <code>true</code> to display
         radion buttons inline.
@@ -267,15 +267,15 @@
         <label><input type='radio'> 2</label>
         <label><input type='radio'> 3</label>
       </ma-radio-group>
-      <pre class='code'>&#x3C;ma-radio-group [inline]=&#x27;true&#x27;&#x3E;
-  &#x3C;label&#x3E;
-    It&#x27;s easy as&#x2026;
-  &#x3C;/label&#x3E;
-  &#x3C;label&#x3E;
-    &#x3C;input type=&#x27;radio&#x27;&#x3E; 1
-  &#x3C;/label&#x3E;
+      <pre class='code'>{{"<ma-radio-group [inline]='true'>
+  <label>
+    It's easy as…
+  </label>
+  <label>
+    <input type='radio'> 1
+  </label>
   …
-&#x3C;/ma-radio-group&#x3E;</pre>
+</ma-radio-group>"}}</pre>
     </ma-card>
   </div>
   <div class='col-lg'>
@@ -291,20 +291,20 @@
         <label><input type='checkbox'> Braden Holtby</label>
         <label><input type='checkbox' disabled> Sidney Crosby</label>
       </ma-checkbox-group>
-      <pre class='code'>&#x3C;ma-checkbox-group&#x3E;
-  &#x3C;label&#x3E;
+      <pre class='code'>{{"<ma-checkbox-group>
+  <label>
     Great Players
-  &#x3C;/label&#x3E;
-  &#x3C;label&#x3E;
-    &#x3C;input type=&#x27;checkbox&#x27; checked&#x3E;
+  </label>
+  <label>
+    <input type='checkbox' checked>
     Alex Ovechkin
-  &#x3C;/label&#x3E;
+  </label>
   …
-  &#x3C;label&#x3E;
-    &#x3C;input type=&#x27;checkbox&#x27; disabled&#x3E;
+  <label>
+    <input type='checkbox' disabled>
     Sidney Crosby
-  &#x3C;/label&#x3E;
-&#x3C;/ma-checkbox-group&#x3E;</pre>
+  </label>
+</ma-checkbox-group>"}}</pre>
       <p>
         Set the property <code>[inline]</code> to <code>true</code> to display
         radion buttons inline.
@@ -315,15 +315,15 @@
         <label><input type='checkbox'> Re</label>
         <label><input type='checkbox'> Mi</label>
       </ma-checkbox-group>
-      <pre class='code'>&#x3C;ma-checkbox-group [inline]=&#x27;true&#x27;&#x3E;
-  &#x3C;label&#x3E;
-    As simple as&#x2026;
-  &#x3C;/label&#x3E;
-  &#x3C;label&#x3E;
-    &#x3C;input type=&#x27;checkbox&#x27;&#x3E; Do
-  &#x3C;/label&#x3E;
+      <pre class='code'>{{"<ma-checkbox-group [inline]='true'>
+  <label>
+    As simple as…
+  </label>
+  <label>
+    <input type='checkbox'> Do
+  </label>
   …
-&#x3C;/ma-checkbox-group&#x3E;</pre>
+</ma-checkbox-group>"}}</pre>
     </ma-card>
   </div>
 </div>
@@ -357,7 +357,8 @@
           </label>
         </ma-input-group>
         <ma-button [submit]='true' [disabled]='!demoForm.valid'>
-          <fa name='user-plus'></fa> Save
+          <fa name='user-plus'></fa>
+          <span>Save</span>
         </ma-button>
       </form>
       <p>

@@ -27,7 +27,7 @@ class FormsComponent {
     FormsComponent(this._doc) {
         this._doc.title = 'Forms';
         this._doc.breadcrumbs = [
-            new Breadcrumb(name: 'Components', icon: 'gears'),
+            new Breadcrumb(name: 'Components', icon: 'toolbox'),
             new Breadcrumb(name: 'Forms'),
         ];
         this.demoForm = FormBuilder.controlGroup({

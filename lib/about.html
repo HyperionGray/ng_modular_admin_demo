@@ -46,7 +46,8 @@
     the following:
   </p>
   <ol>
-    <li>Add <code>ng_modular_admin</code> as a dependency in <code>pubspec.yaml</code>.</li>
+    <li>Add <code>ng_modular_admin</code> as a dependency in <code>pubspec.yaml</code>,
+      and add <code>sass_builer: ^2.1.2</code> to your <code>dev_dependencies</code>.</li>
     <li>Create an SCSS stylesheet in your main web directory, e.g. <code>web/theme.scss</code> and put <code>@import "package:ng_modular_admin/src/modular-admin/modular-admin";</code> at the top of this file.</li>
     <li>You can add any customizations you want to the SCSS stylesheet you created in step 2. The stylesheet will be built automatically when you use <code>webdev serve</code> or <code>webdev build</code>.</li>
     <li>For any component where you want to use Modular Admin, import <code>package:ng_modular_admin/ng_modular_admin.dart</code> and add <code>modularAdminDirectives</code> to that component's directives.</li>
