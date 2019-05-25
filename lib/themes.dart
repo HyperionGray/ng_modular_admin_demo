@@ -44,7 +44,7 @@ class ThemesComponent implements AfterContentInit {
     String cardPadding = '';
     String contentPadding = '';
     String gutterWidth = '';
-    ElementRef host;
+    Element host;
     Timer updateTimer;
     List<String> themes = ['blue', 'red', 'orange', 'hyperion', 'seagreen'];
 

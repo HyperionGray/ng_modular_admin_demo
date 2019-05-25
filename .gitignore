@@ -2,3 +2,6 @@
 .packages
 .pub
 build
+.idea/
+.android/
+pubspec.lock
