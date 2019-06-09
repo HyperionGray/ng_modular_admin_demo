@@ -3,5 +3,5 @@
 .pub
 build
 .idea/
-.android/
+android/
 pubspec.lock
