@@ -1,8 +1,8 @@
 <ma-app>
   <ma-toast-outlet [service]='toastService'></ma-toast-outlet>
   <ma-top-nav *ngIf='layoutService.hasTopNav' [fixed]='layoutService.topNavIsFixed'>
-    <ma-breadcrumbs class='float-xs-left'></ma-breadcrumbs>
-    <div class='float-xs-right buttons' style='position: relative; top: -0.5em;'>
+    <ma-breadcrumbs class='float-sm-left'></ma-breadcrumbs>
+    <div class='float-sm-right buttons' style='position: relative; top: -0.5em;'>
       <form (ngSubmit)='handleSubmit()'>
         <fa name='search' size='lg'></fa>
         <input type='search' placeholder='Search' [(ngModel)]='searchTerm'>
@@ -90,10 +90,10 @@
     <router-outlet [routes]='Routes.all'></router-outlet>
   </ma-content>
   <ma-footer *ngIf='layoutService.hasFooter' [fixed]='layoutService.footerIsFixed'>
-    <div class='float-xs-left'>
+    <div class='float-sm-left'>
       Footer content
     </div>
-    <div class='float-xs-right'>
+    <div class='float-sm-right'>
       I'll find something to put here 😁
     </div>
   </ma-footer>
