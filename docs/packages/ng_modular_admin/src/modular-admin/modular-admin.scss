@@ -1,6 +1,7 @@
 /*
  * Import mixins.
  */
+$spacer:   0.5rem !default;
 @import '../bootstrap/variables';
 @import '../bootstrap/mixins';
 @import 'mixins';
@@ -8,7 +9,7 @@
 /*
  * Import all of Open Sans.
  */
-$OpenSansPath: "../open-sans/fonts" !default;
+$OpenSansPath: "packages/ng_modular_admin/open-sans/fonts" !default;
 $OpenSansVersion: "1.1.0" !default;
 
 @import '../open-sans/sass/mixins';
@@ -30,11 +31,13 @@ $OpenSansVersion: "1.1.0" !default;
 $enable-flex: true;
 @import '../bootstrap/reboot';
 @import '../bootstrap/normalize';
-@import '../bootstrap/grid';
+
+@import '../bootstrap/alert';
 @import '../bootstrap/code';
-@import '../bootstrap/type';
-@import '../bootstrap/utilities';
+@import '../bootstrap/grid';
 @import '../bootstrap/list-group';
+@import '../bootstrap/utilities';
+@import '../bootstrap/type';
 
 /*
  * Import Modular Admin.

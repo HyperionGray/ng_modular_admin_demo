@@ -236,45 +236,67 @@
       <p class='lead'>
         Select one item from a collection.
       </p>
+      <p>
+        Labels are automatically wired so that you
+        can click on a label to select its radio.
+      </p>
+      <h5>Favorite Player:</h5>
       <ma-radio-group>
-        <label>Favorite Player</label>
-        <label><input type='radio' checked> Alex Ovechkin</label>
-        <label><input type='radio'> Nicklas Backstrom</label>
-        <label><input type='radio'> Braden Holtby</label>
-        <label><input type='radio' disabled> Sidney Crosby</label>
+        <input type='radio' name='player' checked>
+        <label>Alex Ovechkin</label>
+      </ma-radio-group>
+      <ma-radio-group>
+        <input type='radio' name='player'>
+        <label>Nicklas Backstrom</label>
+      </ma-radio-group>
+      <ma-radio-group>
+        <input type='radio' name='player'>
+        <label>Braden Holtby</label>
+      </ma-radio-group>
+      <ma-radio-group>
+        <input type='radio' name='player' disabled>
+        <label>Sidney Crosby</label>
       </ma-radio-group>
       <pre class='code'>{{"<ma-radio-group>
-  <label>
-    Favorite Player
-  </label>
-  <label>
-    <input type='radio' checked>
-    Alex Ovechkin
-  </label>
-  …
-  <label>
-    <input type='radio' disabled>
-    Sidney Crosby
-  </label>
+  <input type='radio'
+    name='player' checked>
+  <label>Alex Ovechkin</label>
+</ma-radio-group>
+<ma-radio-group>
+  <input type='radio'
+    name='player'>
+  <label>Nicklas Backstrom</label>
+</ma-radio-group>
+…
+<ma-radio-group>
+  <input type='radio'
+    name='player' disabled>
+  <label>Sidney Crosby</label>
 </ma-radio-group>"}}</pre>
-      <p>
-        Set the property <code>[inline]</code> to <code>true</code> to display
-        radion buttons inline.
-      </p>
-      <ma-radio-group [inline]='true'>
-        <label>It's easy as…</label>
-        <label><input type='radio'> 1</label>
-        <label><input type='radio'> 2</label>
-        <label><input type='radio'> 3</label>
+    <p>
+      Add the <code>inline</code> class to display
+      radios inline.
+    </p>
+    <span class='font-weight-bold'>It's easy as:</span>
+      <ma-radio-group class='inline'>
+        <input type='radio' name='easy'>
+        <label>1</label>
       </ma-radio-group>
-      <pre class='code'>{{"<ma-radio-group [inline]='true'>
-  <label>
-    It's easy as…
-  </label>
-  <label>
-    <input type='radio'> 1
-  </label>
-  …
+      <ma-radio-group class='inline'>
+        <input type='radio' name='easy'>
+        <label>2</label>
+      </ma-radio-group>
+      <ma-radio-group class='inline'>
+        <input type='radio' name='easy'>
+        <label>3</label>
+      </ma-radio-group>
+      <pre class='code'>{{"<ma-radio-group class='inline'>
+  <input type='radio' name='easy'>
+  <label>1</label>
+</ma-radio-group>
+<ma-radio-group class='inline'>
+  <input type='radio' name='easy'>
+  <label>2</label>
 </ma-radio-group>"}}</pre>
     </ma-card>
   </div>
@@ -284,46 +306,66 @@
       <p class='lead'>
         Set boolean properties.
       </p>
+      <p>
+        Labels are automatically wired so that you
+        can click on a label to toggle its checkbox.
+      </p>
+      <h5>Great Players:</h5>
       <ma-checkbox-group>
-        <label>Great Players</label>
-        <label><input type='checkbox' checked> Alex Ovechkin</label>
-        <label><input type='checkbox'> Nicklas Backstrom</label>
-        <label><input type='checkbox'> Braden Holtby</label>
-        <label><input type='checkbox' disabled> Sidney Crosby</label>
+        <input type='checkbox' checked>
+        <label>Alex Ovechkin</label>
+      </ma-checkbox-group>
+      <ma-checkbox-group>
+        <input type='checkbox'>
+        <label>Nicklas Backstrom</label>
+      </ma-checkbox-group>
+      <ma-checkbox-group>
+        <input type='checkbox'>
+        <label>Braden Holtby</label>
+      </ma-checkbox-group>
+      <ma-checkbox-group>
+        <input type='checkbox' disabled>
+        <label>Sidney Crosby</label>
       </ma-checkbox-group>
       <pre class='code'>{{"<ma-checkbox-group>
-  <label>
-    Great Players
-  </label>
-  <label>
-    <input type='checkbox' checked>
-    Alex Ovechkin
-  </label>
-  …
-  <label>
-    <input type='checkbox' disabled>
-    Sidney Crosby
-  </label>
+  <input type='checkbox' checked>
+  <label>Alex Ovechkin</label>
+</ma-checkbox-group>
+<ma-checkbox-group>
+  <input type='checkbox'>
+  <label>Nicklas Backstrom</label>
+</ma-checkbox-group>
+…
+<ma-checkbox-group>
+  <input type='checkbox' disabled>
+  <label>Sidney Crosby</label>
 </ma-checkbox-group>"}}</pre>
       <p>
-        Set the property <code>[inline]</code> to <code>true</code> to display
-        radion buttons inline.
+        Add the <code>inline</code> class to display
+        checkboxes inline.
       </p>
-      <ma-checkbox-group [inline]='true'>
-        <label>As simple as…</label>
-        <label><input type='checkbox'> Do</label>
-        <label><input type='checkbox'> Re</label>
-        <label><input type='checkbox'> Mi</label>
+      <span class='font-weight-bold'>As simple as:</span>
+      <ma-checkbox-group class='inline'>
+        <input type='checkbox'>
+        <label>Do</label>
       </ma-checkbox-group>
-      <pre class='code'>{{"<ma-checkbox-group [inline]='true'>
-  <label>
-    As simple as…
-  </label>
-  <label>
-    <input type='checkbox'> Do
-  </label>
-  …
-</ma-checkbox-group>"}}</pre>
+      <ma-checkbox-group class='inline'>
+        <input type='checkbox'>
+        <label>Re</label>
+      </ma-checkbox-group>
+      <ma-checkbox-group class='inline'>
+        <input type='checkbox'>
+        <label>Mi</label>
+      </ma-checkbox-group>
+      <pre class='code'>{{"<ma-checkbox-group class='inline'>
+  <input type='checkbox'>
+  <label>Do</label>
+</ma-checkbox-group>
+<ma-checkbox-group class='inline'>
+  <input type='checkbox'>
+  <label>Re</label>
+</ma-checkbox-group>
+…"}}</pre>
     </ma-card>
   </div>
 </div>

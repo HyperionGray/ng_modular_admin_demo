@@ -34,5 +34,6 @@ You can test the build by running a web server in the build directory:
 Commit the changes by replacing the current docs with the build docs:
 
     $ git rm -fr docs
+    # rm -fr docs
     $ mv build/ docs/
     $ git add docs
