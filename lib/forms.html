@@ -1,370 +1,412 @@
 <div class='row'>
-  <div class='col-lg'>
-    <ma-card>
-      <h2>Boxed Inputs</h2>
-      <p class='lead'>
-        Default form inputs have a simple border and basic styling.
-      </p>
-      <p>
-        Place an optional label and an input inside of a
-        <code>&lt;ma-input-group&gt;</code> to create a basic form building block.
-        The label's <code>for</code> attribute is automatically wired so that
-        clicking the label focuses the input.
-      </p>
-      <ma-input-group>
-        <label>Text Input</label>
-        <input type='text'
-               placeholder='Placeholder text'>
-      </ma-input-group>
-      <pre class='code'>{{"<ma-input-group>
+    <div class='col-lg'>
+        <ma-card>
+            <h2>Boxed Inputs</h2>
+            <p class='lead'>
+                Default form inputs have a simple border and basic styling.
+            </p>
+            <p>
+                Place an optional label and an input inside of a
+                <code>&lt;ma-input-group&gt;</code> to create a basic form building block.
+                The label's <code>for</code> attribute is automatically wired so that
+                clicking the label focuses the input.
+            </p>
+            <ma-input-group>
+                <label>Text Input</label>
+                <input type='text'
+                       placeholder='Placeholder text'>
+            </ma-input-group>
+            <pre class='code'>{{"<ma-input-group>
   <label>Text Input</label>
   <input type='text'
-    placeholder='Placeholder text'>
+         placeholder='Placeholder text'>
 </ma-input-group>"}}</pre>
-      <p>
-        Add the attribute <code>[inline]='true'</code> to display the input
-        inline with its label. Use CSS width to line up the labels.
-      </p>
-      <ma-input-group [inline]='true'>
-        <label style='width: 7em'>Name</label>
-        <input type='text'
-               placeholder='Placeholder text'>
-      </ma-input-group>
-      <ma-input-group [inline]='true'>
-        <label style='width: 7em'>Password</label>
-        <input type='password'
-               placeholder='Placeholder text'>
-      </ma-input-group>
-      <pre class='code'>{{"<ma-input-group [inline]='true'>
+            <p>
+                Add the attribute <code>[inline]='true'</code> to display the input
+                inline with its label. Use CSS width to line up the labels.
+            </p>
+            <ma-input-group [inline]='true'>
+                <label style='width: 7em'>Name</label>
+                <input type='text'
+                       placeholder='Placeholder text'>
+            </ma-input-group>
+            <ma-input-group [inline]='true'>
+                <label style='width: 7em'>Password</label>
+                <input type='password'
+                       placeholder='Placeholder text'>
+            </ma-input-group>
+            <pre class='code'>{{"<ma-input-group [inline]='true'>
   <label style='width: 7em'>
     Name
   </label>
   <input type='text'
-    placeholder='Placeholder text'>
+         placeholder='Placeholder text'>
 </ma-input-group>
 <ma-input-group [inline]='true'>
   <label style='width: 7em'>
     Password
   </label>
   <input type='password'
-    placeholder='Placeholder text'>
+         placeholder='Placeholder text'>
 </ma-input-group>"}}</pre>
-      <p>
-        Use the boolean attributes <code>disabled</code> or <code>readonly</code>
-        to make immutable form controls.
-      </p>
-      <ma-input-group>
-        <label>Disabled Input</label>
-        <input type='text'
-               placeholder='Placeholder text'
-               disabled>
-      </ma-input-group>
-      <ma-input-group>
-        <label>Read-only Input</label>
-        <input type='text'
-               value='Value text'
-               readonly>
-      </ma-input-group>
-      <pre class='code'>{{"<ma-input-group>
+            <p>
+                Use the boolean attributes <code>disabled</code> or <code>readonly</code>
+                to make immutable form controls.
+            </p>
+            <ma-input-group>
+                <label>Disabled Input</label>
+                <input type='text'
+                       placeholder='Placeholder text'
+                       disabled>
+            </ma-input-group>
+            <ma-input-group>
+                <label>Read-only Input</label>
+                <input type='text'
+                       value='Value text'
+                       readonly>
+            </ma-input-group>
+            <pre class='code'>{{"<ma-input-group>
   <label>Disabled Input</label>
   <input
-    type='text'
-    placeholder='Placeholder text'
-    disabled>
+          type='text'
+          placeholder='Placeholder text'
+          disabled>
 </ma-input-group>
 <ma-input-group>
   <label>Read-only Input</label>
   <input
-    type='text'
-    value='Value text'
-    readonly>
+          type='text'
+          value='Value text'
+          readonly>
 </ma-input-group>"}}</pre>
-      <p>
-        A <code>&lt;textarea&gt;</code> may also be placed into an input group.
-      </p>
-      <ma-input-group>
-        <label>Textarea</label>
-        <textarea>Content text</textarea>
-      </ma-input-group>
-      <pre class='code'>{{"<ma-input-group>
+            <p>
+                A <code>&lt;textarea&gt;</code> may also be placed into an input group.
+            </p>
+            <ma-input-group>
+                <label>Textarea</label>
+                <textarea>Content text</textarea>
+            </ma-input-group>
+            <pre class='code'>{{"<ma-input-group>
   <label>Textarea</label>
   <textarea>Content text</textarea>
 </ma-input-group>"}}</pre>
-    </ma-card>
-  </div>
-  <div class='col-lg'>
-    <ma-card>
-      <h2>Underlined Inputs</h2>
-      <p class='lead'>
-        Underlined inputs have a minimalist style.
-      </p>
-      <p>
-        Add the <code>underlined</code> class to any
-        <code>&lt;input&gt;</code> or <code>&lt;textarea&gt;</code>
-        inside an <code>&lt;ma-form-group&gt;</code>.
-      </p>
-      <ma-input-group>
-        <label>Text Input</label>
-        <input type='text'
-               class='underlined'
-               placeholder='Placeholder text'>
-      </ma-input-group>
-      <ma-input-group>
-        <label>Disabled Input</label>
-        <input type='text'
-               class='underlined'
-               placeholder='Placeholder text'
-               disabled>
-      </ma-input-group>
-      <ma-input-group>
-        <label>Read-only Input</label>
-        <input type='text'
-               class='underlined'
-               value='Value text'
-               readonly>
-      </ma-input-group>
-      <ma-input-group [inline]='true'>
-        <label>Inline Input</label>
-        <input class='underlined'
-               style='width: 10em'
-               type='text'
-               placeholder='Placeholder text'>
-      </ma-input-group>
-      <p>
-        An "underlined" <code>&lt;textarea&gt;</code> actually has two lines
-        to indicate that it is a multi-line input.
-      </p>
-      <ma-input-group>
-        <label>Textarea</label>
-        <textarea class='underlined'>Content text</textarea>
-      </ma-input-group>
-      <pre class='code'>{{"<ma-input-group>
+        </ma-card>
+    </div>
+    <div class='col-lg'>
+        <ma-card>
+            <h2>Underlined Inputs</h2>
+            <p class='lead'>
+                Underlined inputs have a minimalist style.
+            </p>
+            <p>
+                Add the <code>underlined</code> class to any
+                <code>&lt;input&gt;</code> or <code>&lt;textarea&gt;</code>
+                inside an <code>&lt;ma-form-group&gt;</code>.
+            </p>
+            <ma-input-group>
+                <label>Text Input</label>
+                <input type='text'
+                       class='underlined'
+                       placeholder='Placeholder text'>
+            </ma-input-group>
+            <ma-input-group>
+                <label>Disabled Input</label>
+                <input type='text'
+                       class='underlined'
+                       placeholder='Placeholder text'
+                       disabled>
+            </ma-input-group>
+            <ma-input-group>
+                <label>Read-only Input</label>
+                <input type='text'
+                       class='underlined'
+                       value='Value text'
+                       readonly>
+            </ma-input-group>
+            <ma-input-group [inline]='true'>
+                <label>Inline Input</label>
+                <input class='underlined'
+                       style='width: 10em'
+                       type='text'
+                       placeholder='Placeholder text'>
+            </ma-input-group>
+            <p>
+                An "underlined" <code>&lt;textarea&gt;</code> actually has two lines
+                to indicate that it is a multi-line input.
+            </p>
+            <ma-input-group>
+                <label>Textarea</label>
+                <textarea class='underlined'>Content text</textarea>
+            </ma-input-group>
+            <pre class='code'>{{"<ma-input-group>
   <label>Textarea</label>
   <textarea class='underlined'>
     Content text
   </textarea>
 </ma-input-group>"}}</pre>
-    </ma-card>
-    <ma-card>
-      <h2>Add Ons</h2>
-      <p class='lead'>
-        Attach text or symbols to an input.
-      </p>
-      <p>
-        Use a <code>span.ma-add-ons</code> to attach symbols or letters
-        to the beginning or end of an input.
-      </p>
-      <ma-input-group>
+        </ma-card>
+        <ma-card>
+            <h2>Add Ons</h2>
+            <p class='lead'>
+                Attach text or symbols to an input.
+            </p>
+            <p>
+                Use a <code>span.ma-add-ons</code> to attach symbols or letters
+                to the beginning or end of an input.
+            </p>
+            <ma-input-group>
         <span class='ma-add-ons'>
           <span>$</span>
           <input type='text'
                  placeholder='Enter price'>
           <span>.00</span>
         </span>
-      </ma-input-group>
-      <pre class='code'>{{"<ma-input-group>
+            </ma-input-group>
+            <pre class='code'>{{"<ma-input-group>
   <span class='ma-add-ons'>
     <span>$</span>
     <input type='text'
-      placeholder='Enter price'>
+           placeholder='Enter price'>
     <span>.00</span>
   </span>
 </ma-input-group>"}}</pre>
-    </ma-card>
-    <ma-card>
-      <h2>Sizes</h2>
-      <p class='lead'>
-        Inputs adjust to font size automatically.
-      </p>
-      <ma-input-group style='font-size: 20pt;'>
-        <label>
+        </ma-card>
+        <ma-card>
+            <h2>Sizes</h2>
+            <p class='lead'>
+                Inputs adjust to font size automatically.
+            </p>
+            <ma-input-group style='font-size: 20pt;'>
+                <label>
           <span class='ma-add-ons'>
             <input type='text'
                    placeholder='Enter date'>
             <span><fa name='calendar'></fa></span>
           </span>
-        </label>
-      </ma-input-group>
-      <pre class='code'>{{"<ma-input-group
-  style='font-size: 20pt;'>
+                </label>
+            </ma-input-group>
+            <pre class='code'>{{"<ma-input-group
+                    style='font-size: 20pt;'>
   <label>
     <span class='ma-add-ons'>
       <input type='text'
-        placeholder='Enter date'>
+             placeholder='Enter date'>
       <span>
         <fa name='calendar'></fa>
       </span>
     </span>
   </label>
 </ma-input-group>"}}</pre>
-    </ma-card>
-  </div>
+        </ma-card>
+    </div>
 </div>
 <div class='row'>
-  <div class='col-lg'>
-    <ma-card>
-      <h2>Selects</h2>
-      <p class='lead'>
-        A select offers multiple options.
-      </p>
-      <ma-input-group>
-        <label>Color</label>
-        <select>
-          <option>Red</option>
-          <option>Orange</option>
-          <option>Yellow</option>
-          <option>Green</option>
-          <option>Blue</option>
-          <option>Indigo</option>
-          <option>Violet</option>
-        </select>
-      </ma-input-group>
-      <pre class='code'>{{"<ma-input-group>
+    <div class='col-lg'>
+        <ma-card>
+            <h2>Selects</h2>
+            <p class='lead'>
+                A select offers multiple options.
+            </p>
+            <ma-input-group>
+                <label>Color</label>
+                <select>
+                    <option>Red</option>
+                    <option>Orange</option>
+                    <option>Yellow</option>
+                    <option>Green</option>
+                    <option>Blue</option>
+                    <option>Indigo</option>
+                    <option>Violet</option>
+                </select>
+            </ma-input-group>
+            <pre class='code'>{{"<ma-input-group>
   <label>Color</label>
   <select>
     <option>Red</option>
     <option>…</option>
   </select>
 </ma-input-group>"}}</pre>
-    </ma-card>
-  </div>
+        </ma-card>
+    </div>
 </div>
 <div class='row'>
-  <div class='col-lg'>
-    <ma-card>
-      <h2>Radio Buttons</h2>
-      <p class='lead'>
-        Select one item from a collection.
-      </p>
-      <ma-radio-group>
-        <label>Favorite Player</label>
-        <label><input type='radio' checked> Alex Ovechkin</label>
-        <label><input type='radio'> Nicklas Backstrom</label>
-        <label><input type='radio'> Braden Holtby</label>
-        <label><input type='radio' disabled> Sidney Crosby</label>
-      </ma-radio-group>
-      <pre class='code'>{{"<ma-radio-group>
-  <label>
-    Favorite Player
-  </label>
-  <label>
-    <input type='radio' checked>
-    Alex Ovechkin
-  </label>
-  …
-  <label>
-    <input type='radio' disabled>
-    Sidney Crosby
-  </label>
+    <div class='col-lg'>
+        <ma-card>
+            <h2>Radio Buttons</h2>
+            <p class='lead'>
+                Select one item from a collection.
+            </p>
+            <p>
+                Labels are automatically wired so that you
+                can click on a label to select its radio.
+            </p>
+            <h5>Favorite Player:</h5>
+            <ma-radio-group>
+                <input type='radio' name='player' checked>
+                <label>Alex Ovechkin</label>
+            </ma-radio-group>
+            <ma-radio-group>
+                <input type='radio' name='player'>
+                <label>Nicklas Backstrom</label>
+            </ma-radio-group>
+            <ma-radio-group>
+                <input type='radio' name='player'>
+                <label>Braden Holtby</label>
+            </ma-radio-group>
+            <ma-radio-group>
+                <input type='radio' name='player' disabled>
+                <label>Sidney Crosby</label>
+            </ma-radio-group>
+            <pre class='code'>{{"<ma-radio-group>
+  <input type='radio'
+         name='player' checked>
+  <label>Alex Ovechkin</label>
+</ma-radio-group>
+<ma-radio-group>
+  <input type='radio'
+         name='player'>
+  <label>Nicklas Backstrom</label>
+</ma-radio-group>
+…
+<ma-radio-group>
+  <input type='radio'
+         name='player' disabled>
+  <label>Sidney Crosby</label>
 </ma-radio-group>"}}</pre>
-      <p>
-        Set the property <code>[inline]</code> to <code>true</code> to display
-        radion buttons inline.
-      </p>
-      <ma-radio-group [inline]='true'>
-        <label>It's easy as…</label>
-        <label><input type='radio'> 1</label>
-        <label><input type='radio'> 2</label>
-        <label><input type='radio'> 3</label>
-      </ma-radio-group>
-      <pre class='code'>{{"<ma-radio-group [inline]='true'>
-  <label>
-    It's easy as…
-  </label>
-  <label>
-    <input type='radio'> 1
-  </label>
-  …
+            <p>
+                Add the <code>inline</code> class to display
+                radios inline.
+            </p>
+            <span class='font-weight-bold'>It's easy as:</span>
+            <ma-radio-group class='inline'>
+                <input type='radio' name='easy'>
+                <label>1</label>
+            </ma-radio-group>
+            <ma-radio-group class='inline'>
+                <input type='radio' name='easy'>
+                <label>2</label>
+            </ma-radio-group>
+            <ma-radio-group class='inline'>
+                <input type='radio' name='easy'>
+                <label>3</label>
+            </ma-radio-group>
+            <pre class='code'>{{"<ma-radio-group class='inline'>
+  <input type='radio' name='easy'>
+  <label>1</label>
+</ma-radio-group>
+<ma-radio-group class='inline'>
+  <input type='radio' name='easy'>
+  <label>2</label>
 </ma-radio-group>"}}</pre>
-    </ma-card>
-  </div>
-  <div class='col-lg'>
-    <ma-card>
-      <h2>Checkboxes</h2>
-      <p class='lead'>
-        Set boolean properties.
-      </p>
-      <ma-checkbox-group>
-        <label>Great Players</label>
-        <label><input type='checkbox' checked> Alex Ovechkin</label>
-        <label><input type='checkbox'> Nicklas Backstrom</label>
-        <label><input type='checkbox'> Braden Holtby</label>
-        <label><input type='checkbox' disabled> Sidney Crosby</label>
-      </ma-checkbox-group>
-      <pre class='code'>{{"<ma-checkbox-group>
-  <label>
-    Great Players
-  </label>
-  <label>
-    <input type='checkbox' checked>
-    Alex Ovechkin
-  </label>
-  …
-  <label>
-    <input type='checkbox' disabled>
-    Sidney Crosby
-  </label>
+        </ma-card>
+    </div>
+    <div class='col-lg'>
+        <ma-card>
+            <h2>Checkboxes</h2>
+            <p class='lead'>
+                Set boolean properties.
+            </p>
+            <p>
+                Labels are automatically wired so that you
+                can click on a label to toggle its checkbox.
+            </p>
+            <h5>Great Players:</h5>
+            <ma-checkbox-group>
+                <input type='checkbox' checked>
+                <label>Alex Ovechkin</label>
+            </ma-checkbox-group>
+            <ma-checkbox-group>
+                <input type='checkbox'>
+                <label>Nicklas Backstrom</label>
+            </ma-checkbox-group>
+            <ma-checkbox-group>
+                <input type='checkbox'>
+                <label>Braden Holtby</label>
+            </ma-checkbox-group>
+            <ma-checkbox-group>
+                <input type='checkbox' disabled>
+                <label>Sidney Crosby</label>
+            </ma-checkbox-group>
+            <pre class='code'>{{"<ma-checkbox-group>
+  <input type='checkbox' checked>
+  <label>Alex Ovechkin</label>
+</ma-checkbox-group>
+<ma-checkbox-group>
+  <input type='checkbox'>
+  <label>Nicklas Backstrom</label>
+</ma-checkbox-group>
+…
+<ma-checkbox-group>
+  <input type='checkbox' disabled>
+  <label>Sidney Crosby</label>
 </ma-checkbox-group>"}}</pre>
-      <p>
-        Set the property <code>[inline]</code> to <code>true</code> to display
-        radion buttons inline.
-      </p>
-      <ma-checkbox-group [inline]='true'>
-        <label>As simple as…</label>
-        <label><input type='checkbox'> Do</label>
-        <label><input type='checkbox'> Re</label>
-        <label><input type='checkbox'> Mi</label>
-      </ma-checkbox-group>
-      <pre class='code'>{{"<ma-checkbox-group [inline]='true'>
-  <label>
-    As simple as…
-  </label>
-  <label>
-    <input type='checkbox'> Do
-  </label>
-  …
-</ma-checkbox-group>"}}</pre>
-    </ma-card>
-  </div>
+            <p>
+                Add the <code>inline</code> class to display
+                checkboxes inline.
+            </p>
+            <span class='font-weight-bold'>As simple as:</span>
+            <ma-checkbox-group class='inline'>
+                <input type='checkbox'>
+                <label>Do</label>
+            </ma-checkbox-group>
+            <ma-checkbox-group class='inline'>
+                <input type='checkbox'>
+                <label>Re</label>
+            </ma-checkbox-group>
+            <ma-checkbox-group class='inline'>
+                <input type='checkbox'>
+                <label>Mi</label>
+            </ma-checkbox-group>
+            <pre class='code'>{{"<ma-checkbox-group class='inline'>
+  <input type='checkbox'>
+  <label>Do</label>
+</ma-checkbox-group>
+<ma-checkbox-group class='inline'>
+  <input type='checkbox'>
+  <label>Re</label>
+</ma-checkbox-group>
+…"}}</pre>
+        </ma-card>
+    </div>
 </div>
 <div class='row'>
-  <div class='col-lg'>
-    <ma-card>
-      <h2>Angular Validation</h2>
-      <p class='lead'>
-        Plays nicely with Angular's form validation.
-      </p>
-      <p>
-        Use the <code>[control]</code> property to hook into Angular's form
-        validation. The following example demonstrates imperative form
-        validation, but template-driven validation is also possible.
-      </p>
-      <form (ngSubmit)='handleSubmit()' [ngFormModel]='demoForm'>
-        <ma-input-group [control]='demoForm.controls["name"]'>
-          <label>
-            Name
-            <input type='text'
-                   placeholder='Enter your name (required)'
-                   ngControl='name'>
-          </label>
-        </ma-input-group>
-        <ma-input-group [control]='demoForm.controls["age"]'>
-          <label>
-            Age
-            <input type='text'
-                   placeholder='Enter your age'
-                   ngControl='age'>
-          </label>
-        </ma-input-group>
-        <ma-button [submit]='true' [disabled]='!demoForm.valid'>
-          <fa name='user-plus'></fa>
-          <span>Save</span>
-        </ma-button>
-      </form>
-      <p>
-        The markup for this example form is:
-      </p>
-      <pre class='code'>&#x3C;form (ngSubmit)=&#x27;handleSubmit()&#x27; [ngFormModel]=&#x27;demoForm&#x27;&#x3E;
+    <div class='col-lg'>
+        <ma-card>
+            <h2>Angular Validation</h2>
+            <p class='lead'>
+                Plays nicely with Angular's form validation.
+            </p>
+            <p>
+                Use the <code>[control]</code> property to hook into Angular's form
+                validation. The following example demonstrates imperative form
+                validation, but template-driven validation is also possible.
+            </p>
+            <form (ngSubmit)='handleSubmit()' [ngFormModel]='demoForm'>
+                <ma-input-group [control]='demoForm.controls["name"]'>
+                    <label>
+                        Name
+                        <input type='text'
+                               placeholder='Enter your name (required)'
+                               ngControl='name'>
+                    </label>
+                </ma-input-group>
+                <ma-input-group [control]='demoForm.controls["age"]'>
+                    <label>
+                        Age
+                        <input type='text'
+                               placeholder='Enter your age'
+                               ngControl='age'>
+                    </label>
+                </ma-input-group>
+                <ma-button [submit]='true' [disabled]='!demoForm.valid'>
+                    <fa name='user-plus'></fa>
+                    <span>Save</span>
+                </ma-button>
+            </form>
+            <p>
+                The markup for this example form is:
+            </p>
+            <pre class='code'>&#x3C;form (ngSubmit)=&#x27;handleSubmit()&#x27; [ngFormModel]=&#x27;demoForm&#x27;&#x3E;
   &#x3C;ma-input-group [control]=&#x27;demoForm.controls[&#x22;name&#x22;]&#x27;&#x3E;
     &#x3C;label&#x3E;
       Name
@@ -385,19 +427,19 @@
     &#x3C;fa name=&#x27;user-plus&#x27;&#x3E;&#x3C;/fa&#x3E; Save
   &#x3C;/ma-button&#x3E;
 &#x3C;/form&#x3E;</pre>
-    <p>
-      To implement validation, the <code>&lt;form&gt;</code> element must have
-      its <code>[control]</code>directive set to a <code>ControlGroup</code>.
-      Each input needs a control name that corresponds to a control in the
-      control group (see below), e.g. <code>ngControl='name'</code>. Finally,
-      the <code>&lt;ma-input-group&gt;</code> needs its control directive set to
-      the same control as its input. This approach is a bit verbose but it is the
-      only way to work with Angular forms.
-    </p>
-    <p>
-      The component for this form looks like this:
-    </p>
-    <pre class='code'>import &#x27;dart:html&#x27;;
+            <p>
+                To implement validation, the <code>&lt;form&gt;</code> element must have
+                its <code>[control]</code>directive set to a <code>ControlGroup</code>.
+                Each input needs a control name that corresponds to a control in the
+                control group (see below), e.g. <code>ngControl='name'</code>. Finally,
+                the <code>&lt;ma-input-group&gt;</code> needs its control directive set to
+                the same control as its input. This approach is a bit verbose but it is the
+                only way to work with Angular forms.
+            </p>
+            <p>
+                The component for this form looks like this:
+            </p>
+            <pre class='code'>import &#x27;dart:html&#x27;;
 
 import &#x27;package:angular/angular.dart&#x27;;
 import &#x27;package:angular_forms/angular_forms.dart&#x27;;
@@ -434,12 +476,12 @@ class FormsComponent {
         window.alert(&#x27;You submitted name=&#x22;$name&#x22;, age=&#x22;$age&#x22;.&#x27;);
     }
 }</pre>
-    <p>
-      The component creates a <code>CongrolGroup</code> using the <code>FormBuilder</code>
-      factory. This control group is the one passed into the form, and the map
-      keys passed to the builder correspond to the control names assigned to each
-      input.
-    </p>
-    </ma-card>
-  </div>
+            <p>
+                The component creates a <code>CongrolGroup</code> using the <code>FormBuilder</code>
+                factory. This control group is the one passed into the form, and the map
+                keys passed to the builder correspond to the control names assigned to each
+                input.
+            </p>
+        </ma-card>
+    </div>
 </div>
