@@ -3,13 +3,13 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:ng_modular_admin/ng_modular_admin.dart';
 import 'package:ng_modular_admin/validators.dart' as MaValidators;
-
-import 'routes.dart';
+import 'package:ng_modular_admin_demo/routes.dart';
 
 /// Layout component.
 @Component(
     selector: 'sign-up',
-    styles: const ['''
+    styles: const [
+      '''
         h1 {
             text-align: center;
             border-bottom: 1px solid var(--ma-primary-color);
@@ -24,40 +24,41 @@ import 'routes.dart';
             min-width: 5em;
             text-align: right;
         }
-    '''],
+    '''
+    ],
     templateUrl: 'sign_up.html',
-    directives: const [formDirectives, modularAdminDirectives,
-        routerDirectives],
-    exports: [Routes]
-)
+    directives: const [
+      formDirectives,
+      modularAdminDirectives,
+      routerDirectives
+    ],
+    exports: [Routes])
 class SignUpComponent {
-    /// Router instance.
-    Router router;
+  /// Router instance.
+  Router router;
 
-    /// Form controls
-    ControlGroup signupForm;
+  /// Form controls
+  ControlGroup signupForm;
 
-    DocumentService _doc;
+  DocumentService _doc;
 
-    /// Constructor.
-    SignUpComponent(this._doc, this.router) {
-        this._doc.title = 'Sign Up';
-        this.signupForm = FormBuilder.controlGroup({
-            'username': ['', MaValidators.required()],
-            'password1': ['', MaValidators.required()],
-            'password2': ['', null],
-        });
-        this.signupForm.find('password2').validator = composeValidators([
-            MaValidators.required(),
-            MaValidators.matches(
-                this.signupForm.find('password1'),
-                'The two passwords must match.'
-            )
-        ]);
-    }
+  /// Constructor.
+  SignUpComponent(this._doc, this.router) {
+    this._doc.title = 'Sign Up';
+    this.signupForm = FormBuilder.controlGroup({
+      'username': ['', MaValidators.required()],
+      'password1': ['', MaValidators.required()],
+      'password2': ['', null],
+    });
+    this.signupForm.find('password2').validator = composeValidators([
+      MaValidators.required(),
+      MaValidators.matches(
+          this.signupForm.find('password1'), 'The two passwords must match.')
+    ]);
+  }
 
-    /// Handle form submission
-    void register() {
-        router.navigate(Routes.about.toUrl());
-    }
+  /// Handle form submission
+  void register() {
+    router.navigate(Routes.about.toUrl());
+  }
 }

@@ -5,13 +5,13 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:ng_modular_admin/ng_modular_admin.dart';
 import 'package:ng_modular_admin/validators.dart' as MaValidators;
-
-import 'routes.dart';
+import 'package:ng_modular_admin_demo/routes.dart';
 
 /// Layout component.
 @Component(
     selector: 'login',
-    styles: const ['''
+    styles: const [
+      '''
         ma-card.shake {
             animation: shake 0.5s linear;
         }
@@ -51,45 +51,49 @@ import 'routes.dart';
         .content {
             padding: 20px;
         }
-    '''],
+    '''
+    ],
     templateUrl: 'login.html',
-    directives: const [formDirectives, modularAdminDirectives,
-        routerDirectives],
-    exports: [Routes]
-)
+    directives: const [
+      formDirectives,
+      modularAdminDirectives,
+      routerDirectives
+    ],
+    exports: [Routes])
 class LoginComponent {
-    /// Router location.
-    Router router;
+  /// Router location.
+  Router router;
 
-    /// Starts the shake animation.
-    bool shake = false;
+  /// Starts the shake animation.
+  bool shake = false;
 
-    ControlGroup loginForm;
+  ControlGroup loginForm;
 
-    DocumentService _doc;
+  DocumentService _doc;
 
-    /// Constructor.
-    LoginComponent(this._doc, this.router) {
-        this._doc.title = 'Login';
-        this.loginForm = FormBuilder.controlGroup({
-            'username': ['', MaValidators.required()],
-            'password': ['', MaValidators.required()],
-        });
+  /// Constructor.
+  LoginComponent(this._doc, this.router) {
+    this._doc.title = 'Login';
+    this.loginForm = FormBuilder.controlGroup({
+      'username': ['', MaValidators.required()],
+      'password': ['', MaValidators.required()],
+    });
+  }
+
+  /// Do the shake animation.
+  void login() {
+    var password = this.loginForm.controls['password'].value;
+    if (password == 'password123') {
+      this.router.navigate(Routes.about.toUrl());
+    } else {
+      this
+          .loginForm
+          .controls['password']
+          .setErrors({'The password is incorrect.': ''});
+      this.shake = true;
+      new Timer(new Duration(seconds: 1), () {
+        this.shake = false;
+      });
     }
-
-    /// Do the shake animation.
-    void login() {
-        var password = this.loginForm.controls['password'].value;
-        if (password == 'password123') {
-            this.router.navigate(Routes.about.toUrl());
-        } else {
-            this.loginForm.controls['password'].setErrors({
-                'The password is incorrect.': ''
-            });
-            this.shake = true;
-            new Timer(new Duration(seconds: 1), () {
-                this.shake = false;
-            });
-        }
-    }
+  }
 }

@@ -1,32 +1,31 @@
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
-
 import 'package:ng_modular_admin/ng_modular_admin.dart';
-
-import 'layout.dart';
+import 'package:ng_modular_admin_demo/layout.dart';
 
 /// Top navigation component.
 @Component(
     selector: 'top-nav',
-    styles: const ['''
+    styles: const [
+      '''
         ul {list-style: none;}
         .tall {height: 50em;}
-    '''],
+    '''
+    ],
     templateUrl: 'top_nav.html',
-    directives: const [formDirectives, modularAdminDirectives]
-)
+    directives: const [formDirectives, modularAdminDirectives])
 class TopNavComponent {
-    /// A service that contains application state.
-    LayoutService layoutService;
+  /// A service that contains application state.
+  LayoutService layoutService;
 
-    DocumentService _doc;
+  DocumentService _doc;
 
-    /// Constructor.
-    TopNavComponent(this._doc, this.layoutService) {
-        this._doc.title = 'Top Navigation';
-        this._doc.breadcrumbs = [
-            new Breadcrumb(name: 'Navigation', icon: 'map-signs'),
-            new Breadcrumb(name: 'Top Navigation'),
-        ];
-    }
+  /// Constructor.
+  TopNavComponent(this._doc, this.layoutService) {
+    this._doc.title = 'Top Navigation';
+    this._doc.breadcrumbs = [
+      new Breadcrumb(name: 'Navigation', icon: 'map-signs'),
+      new Breadcrumb(name: 'Top Navigation'),
+    ];
+  }
 }
